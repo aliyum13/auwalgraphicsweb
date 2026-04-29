@@ -240,4 +240,7 @@
     text-align: center;
     align-items: center;
   }
-}
+}git remote add origin https://github.com/auwalgraphics/auwalgraphicweb.git
+git branch -M main
+git push -u origin main
+
