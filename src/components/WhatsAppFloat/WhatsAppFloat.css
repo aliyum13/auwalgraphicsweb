@@ -1,0 +1,96 @@
+/* =============================================
+   WhatsAppFloat.css — AuwalGraphics
+   ============================================= */
+
+.ag-wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ag-wa-float__tooltip {
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.25s;
+  pointer-events: none;
+}
+.dark .ag-wa-float__tooltip { background: #1a1a2e; color: #eee; }
+.ag-wa-float:hover .ag-wa-float__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ag-wa-float__btn {
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  animation: waPulseFloat 2.2s infinite;
+  transition: background 0.2s, transform 0.2s;
+}
+.ag-wa-float__btn:hover {
+  background: #1db954;
+  transform: scale(1.08);
+}
+
+@keyframes waPulseFloat {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%      { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+}
+
+/* Mobile sticky bar (shown on small screens) */
+.ag-wa-float__mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 799;
+  background: #fff;
+  border-top: 1px solid #e8e8f0;
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.dark .ag-wa-float__mobile-bar { background: #0f1117; border-top-color: #1e2030; }
+
+.ag-wa-float__mobile-inner {
+  display: flex;
+  gap: 10px;
+}
+.ag-wa-float__mobile-wa,
+.ag-wa-float__mobile-quote {
+  flex: 1;
+  text-align: center;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+}
+.ag-wa-float__mobile-wa    { background: #25d366; color: #fff; }
+.ag-wa-float__mobile-quote { background: #2c459d; color: #fff; }
+
+@media (max-width: 768px) {
+  .ag-wa-float { bottom: 90px; }
+  .ag-wa-float__mobile-bar { display: block; }
+}

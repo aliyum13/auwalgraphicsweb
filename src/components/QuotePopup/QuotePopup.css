@@ -1,0 +1,120 @@
+/* =============================================
+   QuotePopup.css — AuwalGraphics
+   ============================================= */
+
+.ag-popup__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+.ag-popup__overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.ag-popup__box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 44px 40px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+}
+.dark .ag-popup__box { background: #151620; }
+.ag-popup__overlay.open .ag-popup__box {
+  transform: translateY(0) scale(1);
+}
+
+/* Close button */
+.ag-popup__close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #f0f0f5;
+  border: none;
+  font-size: 16px;
+  color: #888;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.dark .ag-popup__close { background: #1e2030; color: #aaa; }
+.ag-popup__close:hover { background: #e0e0e8; }
+
+/* Header */
+.ag-popup__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.dark .ag-popup__title { color: #fff; }
+.ag-popup__sub {
+  font-size: 13.5px;
+  color: #888;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* Form */
+.ag-popup__form { display: flex; flex-direction: column; gap: 12px; }
+
+.ag-popup__form input,
+.ag-popup__form select,
+.ag-popup__form textarea {
+  padding: 13px 16px;
+  border: 1.5px solid #e0e0ea;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  background: #fff;
+  color: #000;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.dark .ag-popup__form input,
+.dark .ag-popup__form select,
+.dark .ag-popup__form textarea {
+  background: #0f1117; border-color: #1e2030; color: #fff;
+}
+.ag-popup__form input:focus,
+.ag-popup__form select:focus,
+.ag-popup__form textarea:focus { border-color: #2c459d; }
+.ag-popup__form textarea { resize: vertical; min-height: 80px; }
+
+.ag-popup__submit {
+  background: #2c459d;
+  color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  transition: all 0.25s;
+  box-shadow: 0 6px 20px rgba(44,69,157,0.3);
+}
+.ag-popup__submit:hover {
+  background: #1e3080;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 500px) {
+  .ag-popup__box { padding: 32px 22px; }
+}

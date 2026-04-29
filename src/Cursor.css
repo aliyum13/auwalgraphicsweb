@@ -1,0 +1,59 @@
+/* ============================================================
+   AuwalGraphics — Cursor.css
+   Fix: cursor must be visible (bright color, correct z-index)
+   ============================================================ */
+
+/* Hide the default browser cursor everywhere */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* ── DOT — the small fast dot ── */
+#ag-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #2c459d;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background-color 0.15s;
+  mix-blend-mode: normal;
+}
+
+/* ── RING — the larger lagging ring ── */
+#ag-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 2.5px solid #2c459d;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* ── Hover state: cursor grows on interactive elements ── */
+a:hover ~ #ag-cursor-dot,
+button:hover ~ #ag-cursor-dot {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Hide custom cursor on touch/mobile devices ── */
+@media (pointer: coarse) {
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+
+  #ag-cursor-dot,
+  #ag-cursor-ring {
+    display: none !important;
+  }
+}

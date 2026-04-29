@@ -1,0 +1,441 @@
+// ============================================================
+// AuwalGraphics — assets.js  (complete data file)
+// ============================================================
+
+
+export const servicesData = [
+  {
+    id: 'graphic-design',
+    title: 'Graphic Design',
+    tagline: 'Visuals That Capture, Convert & Command Attention',
+    icon: '🎨',
+    heroImage: '/graphic-design-hero.png',
+    description: 'Logos, flyers, social media graphics, event banners, branding kits — designs that capture attention and convert viewers into loyal customers.',
+    fullDescription: 'Our graphic design service covers every visual touchpoint your brand needs. From the very first logo concept to campaign-ready flyers, we craft visuals that are strategically built to communicate your value, attract your target audience, and grow your Nigerian business.',
+    includes: [
+      'Logo Design & Brand Identity',
+      'Business Flyers & Posters',
+      'Social Media Graphics & Templates',
+      'Event Banners & Signage',
+      'Email Newsletter Design',
+      'Pitch Decks & Presentations',
+      'Church & Event Programmes',
+      'Political Campaign Materials',
+    ],
+    process: [
+      { step: '01', title: 'Discovery Brief', desc: 'We learn your brand, audience, goals and preferred style.' },
+      { step: '02', title: 'Concept Design', desc: 'We produce 2-3 strong design concepts for your review.' },
+      { step: '03', title: 'Revisions', desc: 'You give feedback, we refine until 100% satisfied.' },
+      { step: '04', title: 'Final Delivery', desc: 'You receive all files in every format needed.' },
+    ],
+    gallery: [
+  '/graphic-design-sample-1.png',
+  '/graphic-design-sample-2.png',
+  '/graphic-design-sample-3.png',
+  '/graphic-design-sample-4.png',
+],
+    turnaround: '24hrs – 5 days',
+    color: 'from-blue-900 to-[#2c459d]',
+  },
+  {
+    id: 'web-design',
+    title: 'Web Design',
+    tagline: 'Websites That Work While You Sleep',
+    icon: '💻',
+    heroImage: '/web-design-hero.png',
+    description: 'Business websites, landing pages, eCommerce stores — fast, mobile-optimised, modern websites built to attract and convert customers.',
+    fullDescription: 'Your website is your most powerful 24/7 salesperson. We build fast, professional, mobile-first websites that look world-class and are engineered to convert visitors into paying customers. From simple business sites to full eCommerce stores — we handle everything from design to launch.',
+    includes: [
+      'Business & Corporate Websites',
+      'Landing Pages & Sales Funnels',
+      'eCommerce Stores',
+      'Church & NGO Websites',
+      'Portfolio Websites',
+      'Blog & News Platforms',
+      'WhatsApp & Contact Integration',
+      'SEO Optimisation for Nigeria',
+    ],
+    process: [
+      { step: '01', title: 'Planning & Wireframe', desc: 'We map your site structure and key pages.' },
+      { step: '02', title: 'Design Mockup', desc: 'Full visual design is created for your approval.' },
+      { step: '03', title: 'Development', desc: 'We build the site with clean, fast, responsive code.' },
+      { step: '04', title: 'Launch & Handover', desc: 'Site goes live, you get full access and training.' },
+    ],
+     gallery: [
+  '/web-design-sample-1.png',
+  '/web-design-sample-2.png',
+  '/web-design-sample-3.png',
+  '/web-design-sample-4.png',
+],
+    turnaround: '5 – 21 days',
+    color: 'from-indigo-900 to-[#2c459d]',
+  },
+  {
+    id: 'printing',
+    title: 'Printing',
+    tagline: 'Premium Quality Print That Represents Your Brand',
+    icon: '🖨️',
+    heroImage: '/printing-hero.png',
+    description: 'T-shirts, banners, mugs, stickers, business cards, packaging — professional printing with premium quality and nationwide delivery.',
+    fullDescription: 'We produce print materials that are sharp, vibrant, and professionally finished. Whether you need 10 branded shirts or 1,000 event banners, we deliver quality that reflects the premium standard your brand deserves — with nationwide delivery across Nigeria.',
+    includes: [
+      'T-Shirts & Custom Apparel',
+      'Pull-Up & Roll-Up Banners',
+      'Business Cards & Compliment Slips',
+      'Mugs, Pens & Branded Gifts',
+      'Stickers, Labels & Tags',
+      'Flyer & Brochure Printing',
+      'Product Packaging',
+      'Event & Political Banners',
+    ],
+    process: [
+      { step: '01', title: 'Design Approval', desc: 'You supply or we design artwork to print specs.' },
+      { step: '02', title: 'Print Proof', desc: 'A digital or physical proof is shared for confirmation.' },
+      { step: '03', title: 'Production', desc: 'Your job goes to print with premium materials.' },
+      { step: '04', title: 'Delivery', desc: 'Nationwide delivery or Abuja pickup available.' },
+    ],
+    gallery: [
+  '/printing-sample-1.png',
+  '/printing-sample-2.png',
+  '/printing-sample-3.png',
+  '/printing-sample-4.png',
+],
+    turnaround: '2 – 7 days',
+    color: 'from-slate-900 to-[#2c459d]',
+  },
+  {
+    id: 'branding',
+    title: 'Branding',
+    tagline: 'Build a Brand People Remember & Trust',
+    icon: '💡',
+    heroImage: '/branding-hero.png',
+    description: 'Complete visual identity systems, brand positioning, guidelines — everything your business needs to look established and trustworthy.',
+    fullDescription: 'A strong brand is more than a logo. We build complete brand identity systems that make your business look established, premium, and consistent across every touchpoint — helping you win trust and charge premium rates.',
+    includes: [
+      'Logo Design (Primary + Variations)',
+      'Brand Colour Palette & Typography',
+      'Brand Style Guide',
+      'Business Stationery Suite',
+      'Social Media Brand Templates',
+      'Brand Voice & Positioning',
+      'Brand Naming Consultation',
+      'Rebrand & Brand Refresh',
+    ],
+    process: [
+      { step: '01', title: 'Brand Discovery', desc: 'Deep dive into your business, audience and goals.' },
+      { step: '02', title: 'Strategy & Concept', desc: 'We develop the brand direction and visual language.' },
+      { step: '03', title: 'Design & Refinement', desc: 'Full brand system designed and refined with you.' },
+      { step: '04', title: 'Brand Delivery', desc: 'Complete brand files and guidelines delivered.' },
+    ],
+    gallery: [
+  '/branding-sample-1.png',
+  '/branding-sample-2.png',
+  '/branding-sample-3.png',
+  '/branding-sample-4.png',
+],
+    turnaround: '7 – 14 days',
+    color: 'from-blue-950 to-[#2c459d]',
+  },
+  {
+    id: 'media-production',
+    title: 'Media Production',
+    tagline: 'Content That Stops the Scroll & Sells',
+    icon: '🎬',
+    heroImage: '/media-production-hero.png',
+    description: 'Product shoots, promotional content, campaign visuals, marketing graphics — media solutions that elevate your brand image.',
+    fullDescription: 'We create scroll-stopping media content — from professional product photography concepts and promotional graphics to full campaign visual suites — all designed to make your brand look premium, attract engagement, and drive sales.',
+    includes: [
+      'Product Photography Direction',
+      'Social Media Campaign Visuals',
+      'Promotional Graphics & Ads',
+      'YouTube Thumbnails & Channel Art',
+      'Email Campaign Creatives',
+      'Event & Conference Visuals',
+      'Brand Storytelling Content',
+      'Digital Billboard & OOH Design',
+    ],
+    process: [
+      { step: '01', title: 'Campaign Brief', desc: 'We understand your message, audience and goals.' },
+      { step: '02', title: 'Creative Direction', desc: 'We plan the visual concept and content strategy.' },
+      { step: '03', title: 'Production', desc: 'All assets created to the highest standard.' },
+      { step: '04', title: 'Delivery', desc: 'Files optimised and ready for every platform.' },
+    ],
+    gallery: [
+  '/media-production-sample-1.png',
+  '/media-production-sample-2.png',
+  '/media-production-sample-3.png',
+  '/media-production-sample-4.png',
+],
+    turnaround: '3 – 10 days',
+    color: 'from-zinc-900 to-[#2c459d]',
+  },
+  {
+    id: 'business-support',
+    title: 'Business Support',
+    tagline: 'Strategic Creative Support for Growing Brands',
+    icon: '📈',
+    heroImage: '/business-support-hero.png',
+    description: 'Marketing creatives, campaign materials, business consultation — strategic creative support that helps your brand grow and compete.',
+    fullDescription: 'Beyond design, we offer strategic creative support that helps your business think, plan and communicate better. Whether you need a monthly retainer, campaign strategy, or specific business materials — we are your creative business partner.',
+    includes: [
+      'Monthly Creative Retainer',
+      'Marketing Campaign Strategy',
+      'Brand Audit & Recommendations',
+      'Competitor Analysis',
+      'Content Calendar Planning',
+      'Investor Pitch Deck Design',
+      'Corporate Profile Design',
+      'Annual Report & Magazine Layout',
+    ],
+    process: [
+      { step: '01', title: 'Business Audit', desc: 'We review your current brand and business position.' },
+      { step: '02', title: 'Strategy Session', desc: 'We map out a creative plan aligned to your goals.' },
+      { step: '03', title: 'Execution', desc: 'We produce all materials on schedule, every time.' },
+      { step: '04', title: 'Review & Optimise', desc: 'We track results and improve based on data.' },
+    ],
+    gallery: [
+  '/business-support-sample-1.png',
+  '/business-support-sample-2.png',
+  '/business-support-sample-3.png',
+  '/business-support-sample-4.png',
+  
+],
+    turnaround: 'Ongoing / Retainer',
+    color: 'from-gray-900 to-[#2c459d]',
+  },
+]
+
+export const portfolioData = [
+  {
+    id: 'corporate-identity',
+    title: 'Corporate Identity System',
+    client: 'Vendo, credix ltd',
+    industry: 'Business Consulting',
+    category: 'Branding',
+    icon: '🏢',
+    gradient: 'from-[#1a2980] to-[#2c459d]',
+    thumbnail: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80',
+    heroImage: '/corp-hero.png',
+    problem: 'The client was a growing consulting firm with no consistent visual identity. They were losing potential contracts because their materials looked unprofessional and inconsistent.',
+    solution: 'We developed a complete brand identity system — logo, colour palette, typography, stationery suite and brand guidelines — giving them a premium, trustworthy corporate image.',
+    result: 'Within 3 months of the rebrand, the client reported a 40% increase in proposal acceptance rate and secured two major government contracts.',
+    gallery: [
+    '/corp-1.png',                  // ← main large image
+    '/corp-2.png',                  // ← secondary left
+    '/corp-3.png',                  // ← secondary right
+  ],
+    tags: ['Logo Design', 'Brand Identity', 'Stationery', 'Guidelines'],
+  },
+  {
+    id: 'restaurant-campaign',
+    title: 'Restaurant Flyer Campaign',
+    client: 'flavour king, yakoyo africana',
+    industry: 'Food & Hospitality',
+    category: 'Graphic Design',
+    icon: '🍽️',
+    gradient: 'from-[#134e4a] to-[#065f46]',
+    thumbnail: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
+    heroImage: '/resto-hero.png',
+    problem: 'A new restaurant in Abuja needed to drive awareness and foot traffic fast with a limited budget.',
+    solution: 'We designed a bold 8-piece flyer campaign covering menu highlights, daily specials, and grand opening event — all consistent with their warm, upscale brand feel.',
+    result: 'The restaurant was fully booked for their first two weekends. The owner credited the flyers as the primary driver of their opening traffic.',
+    gallery: [
+      '/resto-1.png',
+      '/resto-2.png',
+      '/resto-3.png',
+    ],
+    tags: ['Flyer Design', 'Menu Design', 'Print', 'Campaign'],
+  },
+  {
+    id: 'Mosque-banner',
+    title: 'Religious Event Campaign',
+    client: 'Different mosques',
+    industry: 'Religious Organisation',
+    category: 'Print Design',
+    icon: '',
+    gradient: 'from-[#7c2d12] to-[#c2410c]',
+    thumbnail: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=600&q=80',
+    heroImage: '/mosque-hero.png',
+    problem: 'A major 3-day conference needed a complete visual suite covering banners, flyers, programmes, and social media across multiple venues in Abuja.',
+    solution: 'We delivered: 12 large-format banners, event programme booklets, social media graphics, and branded stage backdrop design — all in under 5 days.',
+    result: 'The event attracted 2,000+ attendees. The client described the visuals as the most professional they had ever produced.',
+    gallery: [
+      '/mosque-1.png',
+      '/mosque-2.png',
+      '/mosque-3.png',
+    ],
+    tags: ['Banner Design', 'Event Print', 'Programme', 'Social Media'],
+  },
+  {
+    id: 'ecommerce-website',
+    title: 'E-Commerce Website',
+    client: 'agstoresolution',
+    industry: 'can be customized to suit any bussiness',
+    category: 'Web Design, check the demo on www.agstoresolutions.com',
+    icon: '🛒',
+    gradient: 'from-[#4c1d95] to-[#7c3aed]',
+    thumbnail: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
+    heroImage: '/ecom-hero.png',
+    problem: 'An organic food brand was losing sales to competitors with online stores. They relied entirely on WhatsApp orders which were disorganised.',
+    solution: 'We built a complete eCommerce website with product catalogue, cart, Paystack payment integration, order tracking, and a WhatsApp order backup.',
+    result: 'Online sales increased 200% in the first month. The client expanded to 3 new product lines within 6 months.',
+    gallery: [
+      '/ecom-1.png',
+      '/ecom-2.png',
+      '/ecom-3.png',
+    ],
+    tags: ['eCommerce', 'Web Design', 'Paystack', 'UI/UX'],
+  },
+  {
+    id: 'branded-merchandise',
+    title: 'Brand Merchandise Campaign',
+    client: 'atizens, mataset',
+    industry: ' Events',
+    category: 'Printing',
+    icon: '👕',
+    gradient: 'from-[#065f46] to-[#047857]',
+    thumbnail: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&q=80',
+    heroImage: '/bms-hero.png',
+    problem: 'A tech community needed branded merchandise for their annual hackathon — 300 attendees needed quality items within a 1-week timeline.',
+    solution: 'We designed and produced 300 custom polo shirts, 300 branded tote bags, 500 stickers, and 50 staff hoodies — all delivered 2 days before the event.',
+    result: 'The merchandise generated 50,000+ social media impressions as attendees posted photos online.',
+    gallery: [
+      '/bms-1.png',
+      '/bms-2.png',
+      '/bms-3.png',
+    ],
+    tags: ['T-Shirts', 'Branded Merch', 'Event Print', 'Bulk'],
+  },
+  {
+    id: 'product-packaging',
+    title: 'Product Packaging Design',
+    client: 'tennet luxury, empressb wears',
+    industry: 'Beauty & clothing',
+    category: 'Packaging',
+    icon: '📦',
+    gradient: 'from-[#1e3a5f] to-[#2563eb]',
+    thumbnail: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80',
+    heroImage: '/pp-hero.png',
+    problem: 'A local beauty brand had great products but packaging that looked cheap — causing them to lose shelf space in premium retail stores.',
+    solution: 'We redesigned their full packaging line — boxes, jars, labels, and bags — with a premium aesthetic that communicated quality and justified a higher price point.',
+    result: 'Accepted by 3 new premium retail stores. Average order value increased 35%.',
+    gallery: [
+      '/pp-1.png',
+      '/pp-2.png',
+      '/pp-3.png',
+    ],
+    tags: ['Packaging', 'Label Design', 'Print-Ready', 'Beauty'],
+  },
+]
+
+export const testimonialsData = [
+  {
+    text: 'Professional and incredibly fast. My brand now looks like a top-tier company. Every design they delivered exceeded expectations. Auwal Graphics is absolutely the real deal.',
+    name: 'Adamu Kabiru',
+    business: 'Fashion Brand, Abuja',
+    initials: 'AK',
+  },
+  {
+    text: 'Best printing quality I have ever used in Abuja. My event banners and branded shirts came out perfect. Will definitely work with them again and again.',
+    name: 'Fatima Mohammed',
+    business: 'Event Planner, Abuja',
+    initials: 'FM',
+  },
+  {
+    text: 'They built my website and it completely transformed how customers see my business. I got calls from new clients within the first week of going live. Highly recommended.',
+    name: 'Emmanuel Okafor',
+    business: 'Business Consultant, Abuja',
+    initials: 'EO',
+  },
+]
+
+export const faqData = [
+  {
+    q: 'How long does graphic design take?',
+    a: 'Most logo and branding projects are completed within 2-5 business days. Flyers and social media graphics are typically delivered within 24-48 hours. Rush delivery is available for urgent projects.',
+  },
+  {
+    q: 'Do you deliver outside Abuja?',
+    a: 'Absolutely! We deliver printed materials nationwide across Nigeria. Digital files are delivered instantly anywhere via WhatsApp or email.',
+  },
+  {
+    q: 'Can I print small quantities?',
+    a: 'Yes! We accommodate small and large print runs. You can order as few as 1 T-shirt or as many as 1,000 banners. We will advise on the best quantity for your budget.',
+  },
+  {
+    q: 'How much does a website cost?',
+    a: 'Website pricing depends on type and complexity. Contact us for a free, no-obligation quote tailored to your specific needs and budget.',
+  },
+  {
+    q: 'Do you redesign existing logos?',
+    a: 'Yes! Logo redesign is one of our most popular services. We modernise outdated logos while preserving brand recognition.',
+  },
+]
+
+export const founderData = {
+  name: 'Muhammad Auwal Ali',
+  title: 'Founder & Creative Director — Auwal Graphics',
+  tagline: 'Graphic Designer • Web Developer • Brand Strategist',
+  bio: 'I am a multi-skilled creative professional based in Abuja, Nigeria, with deep expertise in graphic design, web development, and brand strategy. I founded Auwal Graphics to help Nigerian businesses access world-class creative services at accessible prices.',
+  bio2: 'Every project starts with a simple question: what does this business actually need? Not just a logo or a website — but a visual solution that helps them attract customers, build trust, and grow. That business-first approach is what sets my work apart.',
+  photo: 'src/assets/founder image.jpeg', // ← ADD your photo URL here
+  skills: [
+    { name: 'Graphic Design', level: 95, icon: '🎨' },
+    { name: 'Web Development', level: 85, icon: '💻' },
+    { name: 'Brand Identity', level: 92, icon: '💡' },
+    { name: 'Print Production', level: 88, icon: '🖨️' },
+    { name: 'UI/UX Design', level: 80, icon: '📐' },
+    { name: 'Creative Strategy', level: 90, icon: '🧠' },
+  ],
+  tools: [
+    { name: 'Figma', icon: '🎨' },
+    { name: 'Photoshop', icon: '🖌️' },
+    { name: 'Illustrator', icon: '✒️' },
+    { name: 'InDesign', icon: '📐' },
+    { name: 'Canva Pro', icon: '⚡' },
+    { name: 'WordPress', icon: '🌐' },
+    { name: 'HTML/CSS', icon: '💻' },
+    { name: 'React', icon: '⚛️' },
+    { name: 'Webflow', icon: '🔷' },
+    { name: 'Framer', icon: '🚀' },
+  ],
+  availableFor: [
+    'Full-time Remote Design Roles',
+    'Contract & Freelance Projects',
+    'Agency Collaborations',
+    'Web Design Gigs',
+    'Long-term Brand Partnerships',
+    'Creative Consulting',
+  ],
+  socials: {
+    whatsapp: 'https://wa.me/2349067816736',
+    email: 'auwalgraphicsinfo@gmail.com',    // UPDATE
+    instagram: 'https://instagram.com/auwal.graphics', // UPDATE
+    linkedin: 'https://linkedin.com/in/',// UPDATE
+    behance: 'https://behance.net/',     // UPDATE
+    twitter: 'https://twitter.com/',     // UPDATE
+  },
+  timeline: [
+    { year: '2019', title: 'Started as a Graphic Designer', desc: 'Began creating logos, flyers, and social media graphics for businesses in Abuja.' },
+    { year: '2020', title: 'Expanded into Branding', desc: 'Started delivering complete brand identity systems for growing Nigerian businesses.' },
+    { year: '2021', title: 'Entered the Printing Industry', desc: 'Added print production — becoming a one-stop design and print solution.' },
+    { year: '2022', title: 'Learned Web Development', desc: 'Acquired web design and development skills, building websites and landing pages.' },
+    { year: '2023', title: 'Founded Auwal Graphics', desc: 'Launched the full creative agency serving businesses across Nigeria.' },
+    { year: '2024+', title: 'Building & Growing', desc: 'Expanding services, growing the team, serving more Nigerian brands.' },
+  ],
+}
+
+// UPDATE ALL FIELDS BELOW WITH YOUR REAL INFORMATION
+export const contactInfo = {
+  phone: '+234 901 590 6190',
+  whatsapp: '+234 906 781 6736',
+  email: 'auwalgraphicsinfo@gmail.com',        // ← UPDATE
+  address: 'wuse zone 4 fabdal plaza, suite: 211 Nigeria',
+  socials: {
+    facebook: 'https://facebook.com/',     // ← UPDATE
+    instagram: 'https://instagram.com/auwal.graphics',   // ← UPDATE
+    twitter: 'https://twitter.com/',       // ← UPDATE
+    linkedin: 'https://linkedin.com/',     // ← UPDATE
+    youtube: 'https://youtube.com/',       // ← UPDATE or remove
+  },
+}

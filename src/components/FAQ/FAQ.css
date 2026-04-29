@@ -1,0 +1,111 @@
+/* =============================================
+   FAQ.css — AuwalGraphics
+   ============================================= */
+
+.ag-faq {
+  padding: 100px 5%;
+  background: #f8f9ff;
+  font-family: 'Poppins', sans-serif;
+}
+.dark .ag-faq { background: #0f1117; }
+
+.ag-faq__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.ag-faq__label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: #2c459d; background: rgba(44,69,157,0.08);
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;
+}
+.ag-faq__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900; color: #000; letter-spacing: -0.02em;
+}
+.dark .ag-faq__title { color: #fff; }
+
+/* List */
+.ag-faq__list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Item */
+.ag-faq__item {
+  background: #fff;
+  border: 1.5px solid #e8e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.dark .ag-faq__item { background: #151620; border-color: #1e2030; }
+.ag-faq__item.open {
+  border-color: #2c459d;
+  box-shadow: 0 6px 24px rgba(44,69,157,0.1);
+}
+
+/* Question row */
+.ag-faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ag-faq__q-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.45;
+  padding-right: 16px;
+}
+.dark .ag-faq__q-text { color: #fff; }
+
+.ag-faq__toggle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  background: #f0f0f5;
+  color: #555;
+}
+.dark .ag-faq__toggle { background: #1e2030; color: #aaa; }
+.ag-faq__item.open .ag-faq__toggle {
+  background: #2c459d;
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+/* Answer */
+.ag-faq__answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, opacity 0.3s;
+  opacity: 0;
+}
+.ag-faq__item.open .ag-faq__answer {
+  max-height: 300px;
+  opacity: 1;
+}
+.ag-faq__a-text {
+  padding: 0 24px 22px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.75;
+}
+.dark .ag-faq__a-text { color: #888; }
+
+@media (max-width: 640px) { .ag-faq { padding: 70px 5%; } }

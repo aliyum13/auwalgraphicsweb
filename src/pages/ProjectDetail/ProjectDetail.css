@@ -1,0 +1,119 @@
+import React, { useEffect } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
+import { portfolioData } from '../assets/assets'
+import './ProjectDetail.css'
+
+const ProjectDetail = () => {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const project = portfolioData.find(p => p.id === id)
+  const others  = portfolioData.filter(p => p.id !== id).slice(0, 3)
+
+  useEffect(() => { window.scrollTo(0, 0) }, [id])
+
+  if (!project) return (
+    <div style={{ minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:16 }}>
+      <h2>Project not found</h2>
+      <Link to='/'>← Back</Link>
+    </div>
+  )
+
+  return (
+    <div className='ag-proj page-enter'>
+
+      {/* HERO */}
+      <div className={`ag-proj__hero bg-gradient-to-br ${project.gradient}`}>
+        <img src={project.heroImage} alt={project.title} className='ag-proj__hero-img' />
+        <div className='ag-proj__back-wrap'>
+          <button className='ag-proj__back' onClick={() => navigate(-1)}>← Back to Portfolio</button>
+        </div>
+        <motion.div className='ag-proj__hero-content'
+          initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ duration:0.6 }}>
+          <div className='ag-proj__tags'>
+            <span className='ag-proj__tag'>{project.category}</span>
+            <span className='ag-proj__tag'>{project.industry}</span>
+          </div>
+          <h1 className='ag-proj__hero-title'>{project.title}</h1>
+          <p className='ag-proj__hero-client'>Client: <strong>{project.client}</strong></p>
+        </motion.div>
+      </div>
+
+      <div className='ag-proj__body'>
+
+        {/* Case study */}
+        <div className='ag-proj__case-grid'>
+          {[
+            { cls:'problem',  icon:'⚠️', label:'The Problem',  text:project.problem },
+            { cls:'solution', icon:'💡', label:'Our Solution', text:project.solution },
+            { cls:'result',   icon:'📈', label:'The Result',   text:project.result },
+          ].map((b,i) => (
+            <motion.div key={i} className={`ag-proj__case-block ${b.cls}`}
+              initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }}
+              viewport={{ once:true }} transition={{ duration:0.5, delay:i*0.1 }}>
+              <div className='ag-proj__case-icon'>{b.icon}</div>
+              <div className='ag-proj__case-label'>{b.label}</div>
+              <p className='ag-proj__case-text'>{b.text}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Keyword tags */}
+        <div className='ag-proj__keyword-tags'>
+          {project.tags.map(t => <span key={t} className='ag-proj__keyword'>{t}</span>)}
+        </div>
+
+        {/* Gallery */}
+        <div className='ag-proj__gallery'>
+          <span className='ag-proj__gallery-label'>Project Gallery</span>
+          <h2 className='ag-proj__gallery-title'>Project Visuals</h2>
+          <div className='ag-proj__gallery-main'>
+            <img src={project.gallery[0]} alt={`${project.title} main`} />
+          </div>
+          {project.gallery.length > 1 && (
+            <div className='ag-proj__gallery-rest'>
+              {project.gallery.slice(1).map((img,i) => (
+                <div key={i} className='ag-proj__gallery-rest-item'>
+                  <img src={img} alt={`${project.title} ${i+2}`} />
+                </div>
+              ))}
+            </div>
+          )}
+          <p className='ag-proj__gallery-note'>* Placeholder images shown. Actual deliverables available on request.</p>
+        </div>
+
+        {/* CTA */}
+        <motion.div className='ag-proj__cta'
+          initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration:0.6 }}>
+          <h2>Want Results Like This?</h2>
+          <p>Let us work on your project and deliver results that move your business forward. Contact us today for a free quote.</p>
+          <div className='ag-proj__cta-btns'>
+            <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-proj__cta-btn-primary'>
+              📱 Start Your Project
+            </a>
+            <Link to='/' className='ag-proj__cta-btn-ghost'>View More Work →</Link>
+          </div>
+        </motion.div>
+
+        {/* More projects */}
+        <div>
+          <h2 className='ag-proj__more-title'>More Projects</h2>
+          <div className='ag-proj__more-grid'>
+            {others.map(p => (
+              <Link key={p.id} to={`/portfolio/${p.id}`} className='ag-proj__more-card'>
+                <div className={`ag-proj__more-thumb bg-gradient-to-br ${p.gradient}`}>{p.icon}</div>
+                <div className='ag-proj__more-info'>
+                  <div className='ag-proj__more-cat'>{p.category}</div>
+                  <div className='ag-proj__more-name'>{p.title}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
+export default ProjectDetail

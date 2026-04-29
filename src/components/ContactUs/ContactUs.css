@@ -1,0 +1,200 @@
+/* =============================================
+   ContactUs.css — AuwalGraphics
+   Real details: +234 906 781 6736 | auwalgraphicsinfo@gmail.com
+   Wuse Zone 4, Fabdal Plaza Suite 211, Abuja
+   ============================================= */
+
+.ag-contact {
+  padding: 100px 5%;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+.dark .ag-contact { background: #0a0a14; }
+
+.ag-contact__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.ag-contact__label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: #2c459d; background: rgba(44,69,157,0.08);
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;
+}
+.ag-contact__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900; color: #000; margin-bottom: 14px; letter-spacing: -0.02em;
+}
+.dark .ag-contact__title { color: #fff; }
+.ag-contact__sub {
+  font-size: 15px; color: #777; max-width: 480px; margin: 0 auto; line-height: 1.7;
+}
+.dark .ag-contact__sub { color: #888; }
+
+/* Grid */
+.ag-contact__grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── LEFT — info panel ── */
+.ag-contact__info-panel {
+  background: #f8f9ff;
+  border: 1.5px solid #e8e8f0;
+  border-radius: 20px;
+  padding: 32px;
+}
+.dark .ag-contact__info-panel { background: #151620; border-color: #1e2030; }
+
+.ag-contact__info-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 24px;
+}
+.dark .ag-contact__info-title { color: #fff; }
+
+.ag-contact__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.ag-contact__info-icon {
+  width: 40px; height: 40px;
+  background: rgba(44,69,157,0.08);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.ag-contact__info-key {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+.ag-contact__info-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+.dark .ag-contact__info-val { color: #eee; }
+.ag-contact__info-val a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.ag-contact__info-val a:hover { color: #2c459d; }
+
+/* WhatsApp chat button */
+.ag-contact__wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 14px;
+  text-decoration: none;
+  margin-top: 24px;
+  transition: all 0.25s;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.25);
+}
+.ag-contact__wa-btn:hover {
+  background: #1db954;
+  transform: translateY(-2px);
+}
+
+/* ── RIGHT — Form ── */
+.ag-contact__form {
+  background: #f8f9ff;
+  border: 1.5px solid #e8e8f0;
+  border-radius: 20px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dark .ag-contact__form { background: #151620; border-color: #1e2030; }
+
+.ag-contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ag-contact__field { display: flex; flex-direction: column; gap: 7px; }
+
+.ag-contact__field label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+}
+
+.ag-contact__field input,
+.ag-contact__field select,
+.ag-contact__field textarea {
+  padding: 13px 16px;
+  border: 1.5px solid #e0e0ea;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  background: #fff;
+  color: #000;
+  transition: border-color 0.2s;
+}
+.dark .ag-contact__field input,
+.dark .ag-contact__field select,
+.dark .ag-contact__field textarea {
+  background: #0f1117;
+  border-color: #1e2030;
+  color: #fff;
+}
+.ag-contact__field input:focus,
+.ag-contact__field select:focus,
+.ag-contact__field textarea:focus {
+  border-color: #2c459d;
+}
+.ag-contact__field textarea { resize: vertical; min-height: 110px; }
+
+.ag-contact__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2c459d;
+  color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  transition: all 0.25s;
+  box-shadow: 0 6px 20px rgba(44,69,157,0.3);
+}
+.ag-contact__submit:hover {
+  background: #1e3080;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px)  { .ag-contact__grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px)  {
+  .ag-contact { padding: 70px 5%; }
+  .ag-contact__row { grid-template-columns: 1fr; }
+  .ag-contact__form { padding: 24px; }
+}

@@ -1,0 +1,266 @@
+/* =============================================
+   ServiceDetail.css — AuwalGraphics
+   ============================================= */
+
+.ag-svc-detail { font-family: 'Poppins', sans-serif; background: #fff; }
+.dark .ag-svc-detail { background: #0a0a14; }
+
+/* ── HERO ── */
+.ag-svc-detail__hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  /* background-image applied via inline style in JSX */
+  background-color: #0d1a4a;
+}
+
+.ag-svc-detail__back-wrap {
+  position: relative; z-index: 2;
+  padding: 100px 5% 10px;
+}
+.ag-svc-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.ag-svc-detail__back:hover { color: #fff; }
+.ag-svc-detail__hero-content {
+  position: relative; z-index: 2;
+  padding: 0 5% 56px;
+}
+.ag-svc-detail__hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 7px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.ag-svc-detail__hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.08;
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+}
+.ag-svc-detail__hero-tagline {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.ag-svc-detail__turnaround {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+/* ── BODY ── */
+.ag-svc-detail__body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 5%;
+}
+
+/* Overview grid */
+.ag-svc-detail__overview {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+
+.ag-svc-detail__section-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: #2c459d; background: rgba(44,69,157,0.08);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 14px;
+}
+.ag-svc-detail__section-title {
+  font-size: 2rem; font-weight: 900; color: #000; margin-bottom: 18px; letter-spacing: -0.02em;
+}
+.dark .ag-svc-detail__section-title { color: #fff; }
+.ag-svc-detail__desc {
+  font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 16px;
+}
+.dark .ag-svc-detail__desc { color: #888; }
+
+/* Includes card */
+.ag-svc-detail__includes {
+  background: #2c459d;
+  border-radius: 20px;
+  padding: 32px;
+  color: #fff;
+  position: sticky;
+  top: 90px;
+}
+.ag-svc-detail__includes h3 { font-size: 16px; font-weight: 800; margin-bottom: 20px; }
+.ag-svc-detail__includes ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ag-svc-detail__includes li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: rgba(255,255,255,0.85);
+}
+.ag-svc-detail__includes-check {
+  width: 20px; height: 20px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ag-svc-detail__includes-divider {
+  border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 20px 0;
+}
+.ag-svc-detail__quote-btn {
+  display: block;
+  text-align: center;
+  background: #fff;
+  color: #2c459d;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 13px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.ag-svc-detail__quote-btn:hover { background: #f0f4ff; }
+
+/* Gallery */
+.ag-svc-detail__gallery { margin-bottom: 80px; }
+.ag-svc-detail__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+}
+.ag-svc-detail__gallery-img {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.ag-svc-detail__gallery-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.ag-svc-detail__gallery-img:hover img { transform: scale(1.06); }
+.ag-svc-detail__gallery-note {
+  text-align: center; font-size: 12px; color: #bbb; margin-top: 12px;
+}
+
+/* Process steps */
+.ag-svc-detail__process { margin-bottom: 80px; }
+.ag-svc-detail__process-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
+}
+.ag-svc-detail__process-step {}
+.ag-svc-detail__process-num {
+  font-size: 3.5rem; font-weight: 900; color: rgba(44,69,157,0.1); line-height: 1; margin-bottom: 8px;
+}
+.ag-svc-detail__process-bar {
+  width: 32px; height: 3px; background: #2c459d; border-radius: 2px; margin-bottom: 14px;
+}
+.ag-svc-detail__process-title {
+  font-size: 15px; font-weight: 800; color: #000; margin-bottom: 8px;
+}
+.dark .ag-svc-detail__process-title { color: #fff; }
+.ag-svc-detail__process-desc { font-size: 13.5px; color: #777; line-height: 1.7; }
+.dark .ag-svc-detail__process-desc { color: #888; }
+
+/* CTA block */
+.ag-svc-detail__cta {
+  background: #2c459d;
+  border-radius: 24px;
+  padding: 60px 48px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.ag-svc-detail__cta h2 {
+  font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 14px; letter-spacing: -0.02em;
+}
+.ag-svc-detail__cta p { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+.ag-svc-detail__cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.ag-svc-detail__cta-btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: #2c459d; font-weight: 700;
+  padding: 14px 28px; border-radius: 100px; font-size: 14px;
+  text-decoration: none; transition: all 0.25s;
+}
+.ag-svc-detail__cta-btn-wa:hover { background: #eef1fb; transform: translateY(-2px); }
+.ag-svc-detail__cta-btn-msg {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); color: #fff;
+  border: 2px solid rgba(255,255,255,0.25); font-weight: 700;
+  padding: 14px 28px; border-radius: 100px; font-size: 14px;
+  text-decoration: none; transition: all 0.25s;
+}
+.ag-svc-detail__cta-btn-msg:hover { background: rgba(255,255,255,0.2); }
+
+/* Other services */
+.ag-svc-detail__others-title {
+  font-size: 1.5rem; font-weight: 900; color: #000; margin-bottom: 24px;
+}
+.dark .ag-svc-detail__others-title { color: #fff; }
+.ag-svc-detail__others-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+}
+.ag-svc-detail__other-card {
+  display: block;
+  background: #f8f9ff; border: 1.5px solid #e8e8f0; border-radius: 16px;
+  padding: 22px; text-decoration: none; transition: all 0.25s;
+}
+.dark .ag-svc-detail__other-card { background: #151620; border-color: #1e2030; }
+.ag-svc-detail__other-card:hover {
+  border-color: rgba(44,69,157,0.35);
+  box-shadow: 0 10px 30px rgba(44,69,157,0.1);
+}
+.ag-svc-detail__other-icon { font-size: 1.8rem; margin-bottom: 10px; }
+.ag-svc-detail__other-name {
+  font-size: 14px; font-weight: 700; color: #000; margin-bottom: 6px; transition: color 0.2s;
+}
+.dark .ag-svc-detail__other-name { color: #fff; }
+.ag-svc-detail__other-card:hover .ag-svc-detail__other-name { color: #2c459d; }
+.ag-svc-detail__other-desc { font-size: 12px; color: #888; line-height: 1.6; }
+.ag-svc-detail__other-link { font-size: 12px; font-weight: 700; color: #2c459d; margin-top: 10px; display: block; }
+
+@media (max-width: 1024px) {
+  .ag-svc-detail__overview { grid-template-columns: 1fr; }
+  .ag-svc-detail__includes { position: static; }
+  .ag-svc-detail__gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .ag-svc-detail__process-grid { grid-template-columns: repeat(2,1fr); }
+  .ag-svc-detail__others-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .ag-svc-detail__body { padding: 48px 5%; }
+  .ag-svc-detail__cta { padding: 40px 24px; }
+  .ag-svc-detail__cta h2 { font-size: 1.6rem; }
+  .ag-svc-detail__gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .ag-svc-detail__process-grid { grid-template-columns: 1fr; }
+  .ag-svc-detail__others-grid { grid-template-columns: 1fr; }
+}

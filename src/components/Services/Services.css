@@ -1,0 +1,153 @@
+/* =============================================
+   Services.css — AuwalGraphics
+   ============================================= */
+
+.ag-services {
+  padding: 100px 5%;
+  background: #f8f9ff;
+  font-family: 'Poppins', sans-serif;
+}
+.dark .ag-services { background: #0f1117; }
+
+.ag-services__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ag-services__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #2c459d;
+  background: rgba(44,69,157,0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.ag-services__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #000;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.dark .ag-services__title { color: #fff; }
+
+.ag-services__sub {
+  font-size: 15px;
+  color: #777;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.dark .ag-services__sub { color: #888; }
+
+/* Grid */
+.ag-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.ag-services__card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 34px 28px;
+  border: 1.5px solid #ebebf0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dark .ag-services__card {
+  background: #151620;
+  border-color: #1e2030;
+}
+.ag-services__card:hover {
+  border-color: rgba(44,69,157,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(44,69,157,0.12);
+}
+
+/* Accent bar at bottom */
+.ag-services__card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2c459d, #3d5bbf);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.ag-services__card:hover::after { transform: scaleX(1); }
+
+/* Icon */
+.ag-services__icon {
+  width: 56px; height: 56px;
+  background: rgba(44,69,157,0.08);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+.ag-services__card:hover .ag-services__icon {
+  background: #2c459d;
+}
+
+.ag-services__card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 10px;
+}
+.dark .ag-services__card-title { color: #fff; }
+
+.ag-services__card-desc {
+  font-size: 13.5px;
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex: 1;
+}
+.dark .ag-services__card-desc { color: #888; }
+
+/* Learn More button */
+.ag-services__learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c459d;
+  text-decoration: none;
+  border: 2px solid rgba(44,69,157,0.2);
+  padding: 9px 18px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  width: fit-content;
+}
+.ag-services__learn:hover {
+  background: #2c459d;
+  color: #fff;
+  border-color: #2c459d;
+}
+
+@media (max-width: 1024px) {
+  .ag-services__grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .ag-services { padding: 70px 5%; }
+  .ag-services__grid { grid-template-columns: 1fr; }
+}

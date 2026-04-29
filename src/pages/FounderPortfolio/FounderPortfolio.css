@@ -1,0 +1,294 @@
+/* =============================================
+   FounderPortfolio.css — Muhammad Auwal Ali
+   ============================================= */
+
+.ag-founder { font-family:'Poppins',sans-serif; background:#fff; }
+.dark .ag-founder { background:#0a0a14; }
+
+/* ── HERO ── */
+.ag-founder__hero {
+  min-height:100vh; background:#000;
+  display:flex; align-items:center;
+  padding:0 5%;
+  position:relative; overflow:hidden;
+}
+.ag-founder__hero-glow {
+  position:absolute; border-radius:50%; pointer-events:none;
+  width:600px; height:600px; top:50%; right:10%;
+  transform:translateY(-50%);
+  background:radial-gradient(circle, rgba(44,69,157,0.2) 0%, transparent 70%);
+}
+.ag-founder__hero-grid {
+  position:absolute; inset:0; opacity:0.04;
+  background-image:linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.ag-founder__hero-inner {
+  max-width:1200px; margin:0 auto; width:100%;
+  display:grid; grid-template-columns:1.1fr 0.9fr;
+  gap:80px; align-items:center;
+  position:relative; z-index:1;
+  padding:120px 0 80px;
+}
+
+/* Back link */
+.ag-founder__back {
+  display:inline-flex; align-items:center; gap:6px;
+  color:rgba(255,255,255,0.4); font-size:13px; font-weight:500;
+  text-decoration:none; margin-bottom:36px; transition:color 0.2s;
+}
+.ag-founder__back:hover { color:rgba(255,255,255,0.7); }
+
+/* Eyebrow badge */
+.ag-founder__eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(44,69,157,0.2); border:1px solid rgba(44,69,157,0.4);
+  color:#2c459d; font-size:11px; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.1em;
+  padding:7px 16px; border-radius:100px; margin-bottom:20px;
+}
+.ag-founder__eyebrow-dot {
+  width:7px; height:7px; background:#2c459d; border-radius:50%;
+  animation:heroPulse 2s infinite;
+}
+
+/* Name */
+.ag-founder__name {
+  font-size:clamp(3rem,6vw,5.5rem); font-weight:900;
+  line-height:1.0; margin-bottom:18px; letter-spacing:-0.03em; color:#fff;
+}
+.ag-founder__name .blue { color:#2c459d; }
+
+/* Role pills */
+.ag-founder__roles { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+.ag-founder__role {
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.7); font-size:12px; font-weight:500;
+  padding:7px 14px; border-radius:100px;
+}
+
+/* Bio */
+.ag-founder__bio { font-size:15px; color:rgba(255,255,255,0.5); line-height:1.75; margin-bottom:32px; max-width:500px; }
+
+/* Hero buttons */
+.ag-founder__hero-btns { display:flex; flex-wrap:wrap; gap:10px; }
+.ag-founder__btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#2c459d; color:#fff; padding:13px 24px;
+  border-radius:10px; font-size:14px; font-weight:700;
+  text-decoration:none; border:none; transition:all 0.25s;
+  box-shadow:0 6px 20px rgba(44,69,157,0.3);
+}
+.ag-founder__btn-primary:hover { background:#1e3080; transform:translateY(-2px); }
+.ag-founder__btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.7); padding:13px 24px;
+  border-radius:10px; font-size:14px; font-weight:700;
+  text-decoration:none; transition:all 0.25s;
+}
+.ag-founder__btn-ghost:hover { background:rgba(255,255,255,0.12); color:#fff; }
+.ag-founder__btn-cv {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; border:1.5px solid rgba(44,69,157,0.4);
+  color:#2c459d; padding:13px 24px;
+  border-radius:10px; font-size:14px; font-weight:700;
+  text-decoration:none; transition:all 0.25s;
+}
+.ag-founder__btn-cv:hover { background:rgba(44,69,157,0.1); }
+
+/* Portrait card */
+.ag-founder__portrait-wrap { position:relative; max-width:400px; margin:0 auto; }
+.ag-founder__portrait {
+  aspect-ratio:4/5; border-radius:24px;
+  background:linear-gradient(135deg,rgba(44,69,157,0.4),#000);
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; position:relative;
+}
+.ag-founder__portrait img { width:100%; height:100%; object-fit:cover; }
+.ag-founder__portrait-placeholder { font-size:7rem; opacity:0.2; }
+.ag-founder__portrait-placeholder-text { font-size:12px; color:rgba(255,255,255,0.3); text-align:center; margin-top:12px; padding:0 24px; }
+.ag-founder__name-card {
+  position:absolute; bottom:20px; left:20px; right:20px;
+  background:rgba(0,0,0,0.8); backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:14px 18px;
+}
+.ag-founder__name-card-name { font-size:14px; font-weight:700; color:#fff; }
+.ag-founder__name-card-role { font-size:11px; color:rgba(255,255,255,0.5); margin-top:2px; }
+
+/* Portrait floating badges */
+.ag-founder__portrait-badge {
+  position:absolute; background:#fff; border-radius:10px;
+  padding:8px 12px; font-size:11px; font-weight:700; color:#111;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2); white-space:nowrap; z-index:2;
+}
+.dark .ag-founder__portrait-badge { background:#1e2030; color:#eee; }
+.ag-founder__portrait-badge:nth-child(1) { top:15%; right:-20px; }
+.ag-founder__portrait-badge:nth-child(2) { top:42%; left:-20px; }
+.ag-founder__portrait-badge:nth-child(3) { bottom:28%; right:-20px; }
+
+/* ── BRAND STATEMENT ── */
+.ag-founder__statement {
+  background:#2c459d; padding:64px 5%;
+}
+.ag-founder__statement p {
+  max-width:740px; margin:0 auto; text-align:center;
+  font-size:clamp(1.2rem,2.5vw,1.7rem); font-weight:700;
+  color:#fff; line-height:1.55;
+}
+.ag-founder__statement span { color:rgba(255,255,255,0.55); }
+
+/* ── SKILLS ── */
+.ag-founder__skills { padding:100px 5%; background:#f8f9ff; }
+.dark .ag-founder__skills { background:#0f1117; }
+.ag-founder__section-header { text-align:center; margin-bottom:56px; }
+.ag-founder__section-label {
+  display:inline-block; font-size:11px; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.15em;
+  color:#2c459d; background:rgba(44,69,157,0.08);
+  padding:6px 16px; border-radius:100px; margin-bottom:14px;
+}
+.ag-founder__section-title {
+  font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:900;
+  color:#000; letter-spacing:-0.02em;
+}
+.dark .ag-founder__section-title { color:#fff; }
+
+.ag-founder__skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1100px; margin:0 auto; }
+.ag-founder__skill-card {
+  background:#fff; border:1.5px solid #e8e8f0; border-radius:16px; padding:22px;
+  transition:all 0.3s;
+}
+.dark .ag-founder__skill-card { background:#151620; border-color:#1e2030; }
+.ag-founder__skill-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(44,69,157,0.1); border-color:rgba(44,69,157,0.3); }
+.ag-founder__skill-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.ag-founder__skill-name-wrap { display:flex; align-items:center; gap:10px; }
+.ag-founder__skill-icon { font-size:1.4rem; }
+.ag-founder__skill-name { font-size:14px; font-weight:700; color:#000; }
+.dark .ag-founder__skill-name { color:#fff; }
+.ag-founder__skill-pct { font-size:13px; font-weight:900; color:#2c459d; }
+.ag-founder__skill-bar { height:7px; background:#f0f0f5; border-radius:100px; overflow:hidden; }
+.dark .ag-founder__skill-bar { background:#1e2030; }
+.ag-founder__skill-fill { height:100%; background:#2c459d; border-radius:100px; transition:width 1.2s ease; }
+
+/* ── PORTFOLIO (inside founder page) ── */
+.ag-founder__portfolio { padding:100px 5%; background:#fff; }
+.dark .ag-founder__portfolio { background:#0a0a14; }
+.ag-founder__portfolio-intro { margin-bottom:40px; }
+.ag-founder__portfolio-sub { font-size:15px; color:#777; max-width:480px; line-height:1.7; margin-top:10px; }
+.dark .ag-founder__portfolio-sub { color:#888; }
+.ag-founder__portfolio-filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+.ag-founder__filter-btn {
+  padding:8px 18px; border-radius:8px; font-size:13px;
+  font-weight:600; border:none; font-family:'Poppins',sans-serif; transition:all 0.2s;
+}
+.ag-founder__filter-btn.active { background:#2c459d; color:#fff; }
+.ag-founder__filter-btn:not(.active) { background:#f0f0f5; color:#555; }
+.dark .ag-founder__filter-btn:not(.active) { background:#1e2030; color:#aaa; }
+.ag-founder__filter-btn:not(.active):hover { background:#e0e0ea; }
+
+/* ── TIMELINE ── */
+.ag-founder__timeline { padding:100px 5%; background:#f8f9ff; }
+.dark .ag-founder__timeline { background:#0f1117; }
+.ag-founder__tl-wrap { max-width:680px; margin:56px auto 0; padding-left:28px; border-left:2px solid rgba(44,69,157,0.2); }
+.ag-founder__tl-item { position:relative; margin-bottom:36px; }
+.ag-founder__tl-item::before {
+  content:''; position:absolute; left:-36px; top:5px;
+  width:14px; height:14px; background:#2c459d; border-radius:50%;
+  border:3px solid #f8f9ff;
+}
+.dark .ag-founder__tl-item::before { border-color:#0f1117; }
+.ag-founder__tl-item.current::before { animation:heroPulse 2s infinite; }
+.ag-founder__tl-year { font-size:11px; font-weight:800; color:#2c459d; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:5px; }
+.ag-founder__tl-title { font-size:16px; font-weight:700; color:#000; margin-bottom:6px; }
+.dark .ag-founder__tl-title { color:#fff; }
+.ag-founder__tl-desc { font-size:13.5px; color:#777; line-height:1.65; }
+.dark .ag-founder__tl-desc { color:#888; }
+
+/* ── TOOLS ── */
+.ag-founder__tools { padding:100px 5%; background:#fff; }
+.dark .ag-founder__tools { background:#0a0a14; }
+.ag-founder__tools-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; max-width:900px; margin:56px auto 0; }
+.ag-founder__tool {
+  background:#f8f9ff; border:1.5px solid #e8e8f0; border-radius:14px;
+  padding:20px 14px; text-align:center;
+  transition:all 0.25s;
+}
+.dark .ag-founder__tool { background:#151620; border-color:#1e2030; }
+.ag-founder__tool:hover { border-color:rgba(44,69,157,0.3); background:rgba(44,69,157,0.04); transform:translateY(-3px); }
+.ag-founder__tool-icon { font-size:1.6rem; margin-bottom:8px; }
+.ag-founder__tool-name { font-size:12px; font-weight:600; color:#555; }
+.dark .ag-founder__tool-name { color:#aaa; }
+
+/* ── RECRUITER / AVAILABILITY ── */
+.ag-founder__recruiter { padding:100px 5%; background:#f8f9ff; }
+.dark .ag-founder__recruiter { background:#0f1117; }
+.ag-founder__recruiter-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.ag-founder__avail-list { display:flex; flex-direction:column; gap:10px; margin:32px 0; }
+.ag-founder__avail-item {
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border:1.5px solid #e8e8f0; border-radius:12px;
+  padding:13px 18px; font-size:14px; font-weight:500; color:#333;
+}
+.dark .ag-founder__avail-item { background:#151620; border-color:#1e2030; color:#ccc; }
+.ag-founder__avail-check { color:#2c459d; font-weight:800; }
+.ag-founder__resume-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  border:2px solid #2c459d; color:#2c459d;
+  padding:12px 24px; border-radius:10px; font-size:14px; font-weight:700;
+  text-decoration:none; transition:all 0.25s; margin-top:8px;
+}
+.ag-founder__resume-btn:hover { background:#2c459d; color:#fff; }
+
+/* Hire card */
+.ag-founder__hire-card {
+  background:#2c459d; border-radius:24px; padding:44px;
+  text-align:center; color:#fff;
+}
+.ag-founder__hire-card h3 { font-size:1.6rem; font-weight:900; margin-bottom:10px; letter-spacing:-0.02em; }
+.ag-founder__hire-card p { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:28px; max-width:280px; margin-left:auto; margin-right:auto; }
+.ag-founder__hire-btns { display:flex; flex-direction:column; gap:10px; }
+.ag-founder__hire-btn-wa {
+  display:block; background:#fff; color:#2c459d; font-weight:700; font-size:14px;
+  padding:14px; border-radius:12px; text-decoration:none; transition:background 0.2s;
+}
+.ag-founder__hire-btn-wa:hover { background:#f0f4ff; }
+.ag-founder__hire-btn-email {
+  display:block; background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.2);
+  color:#fff; font-weight:700; font-size:14px;
+  padding:14px; border-radius:12px; text-decoration:none; transition:background 0.2s;
+}
+.ag-founder__hire-btn-email:hover { background:rgba(255,255,255,0.2); }
+.ag-founder__hire-socials { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+.ag-founder__hire-social {
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.7); font-size:12px; font-weight:600;
+  padding:7px 14px; border-radius:8px; text-decoration:none; transition:background 0.2s;
+}
+.ag-founder__hire-social:hover { background:rgba(255,255,255,0.2); color:#fff; }
+
+/* Footer strip */
+.ag-founder__footer-strip { background:#000; padding:32px 5%; text-align:center; }
+.ag-founder__footer-link { font-size:13px; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.2s; }
+.ag-founder__footer-link:hover { color:rgba(255,255,255,0.65); }
+
+/* Shared animation */
+@keyframes heroPulse {
+  0%,100% { transform:scale(1); opacity:1; }
+  50%      { transform:scale(1.4); opacity:0.6; }
+}
+
+/* Responsive */
+@media (max-width:1024px) {
+  .ag-founder__hero-inner { grid-template-columns:1fr; gap:48px; }
+  .ag-founder__skills-grid { grid-template-columns:repeat(2,1fr); }
+  .ag-founder__tools-grid  { grid-template-columns:repeat(4,1fr); }
+  .ag-founder__recruiter-inner { grid-template-columns:1fr; }
+  .ag-founder__portrait-wrap { display:none; }
+}
+@media (max-width:640px) {
+  .ag-founder__hero { padding:0 5%; }
+  .ag-founder__skills-grid { grid-template-columns:1fr; }
+  .ag-founder__tools-grid  { grid-template-columns:repeat(3,1fr); }
+}

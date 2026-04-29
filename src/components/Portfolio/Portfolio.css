@@ -1,0 +1,189 @@
+/* =============================================
+   Portfolio.css — AuwalGraphics
+   ============================================= */
+
+.ag-portfolio {
+  padding: 100px 5%;
+  background: #050508;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ag-portfolio__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.ag-portfolio__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #2c459d;
+  background: rgba(44,69,157,0.15);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.ag-portfolio__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.ag-portfolio__sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.35);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Filters */
+.ag-portfolio__filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.ag-portfolio__filter-btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.ag-portfolio__filter-btn.active {
+  background: #2c459d;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(44,69,157,0.35);
+}
+.ag-portfolio__filter-btn:not(.active) {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.5);
+}
+.ag-portfolio__filter-btn:not(.active):hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Grid */
+.ag-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.ag-portfolio__card {
+  display: block;
+  background: #0f1117;
+  border: 1.5px solid rgba(255,255,255,0.05);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ag-portfolio__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  border-color: rgba(44,69,157,0.3);
+}
+
+.ag-portfolio__thumb {
+  position: relative;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 3.2rem;
+}
+
+.ag-portfolio__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44,69,157,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ag-portfolio__card:hover .ag-portfolio__overlay { opacity: 1; }
+
+.ag-portfolio__view-btn {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.5);
+  padding: 10px 22px;
+  border-radius: 100px;
+}
+
+.ag-portfolio__info { padding: 18px 20px 22px; }
+
+.ag-portfolio__cat {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #2c459d;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.ag-portfolio__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+.ag-portfolio__card:hover .ag-portfolio__name { color: #2c459d; }
+
+.ag-portfolio__client {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* CTA */
+.ag-portfolio__cta-wrap {
+  text-align: center;
+  margin-top: 48px;
+}
+.ag-portfolio__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.12);
+  padding: 12px 30px;
+  border-radius: 100px;
+  transition: all 0.25s;
+}
+.ag-portfolio__cta-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 1024px) {
+  .ag-portfolio__grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .ag-portfolio { padding: 70px 5%; }
+  .ag-portfolio__grid { grid-template-columns: 1fr; }
+}
