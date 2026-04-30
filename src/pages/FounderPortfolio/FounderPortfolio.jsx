@@ -142,7 +142,6 @@ const FounderPortfolio = () => {
             </button>
           ))}
         </div>
-        {/* ✅ Fixed: moved to CSS class so breakpoints work */}
         <div className='ag-founder__portfolio-grid'>
           {filtered.map((p,i) => (
             <motion.div key={p.id} initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }}
