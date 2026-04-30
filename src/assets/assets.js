@@ -1,7 +1,12 @@
 // ============================================================
 // AuwalGraphics — assets.js  (complete data file)
 // ============================================================
+import founderPhoto from './founder image.jpeg'
 
+export const founderData = {
+  name: 'Muhammad Auwal Ali',
+  photo: './founder image.jpeg',  
+  ...
 
 export const servicesData = [
   {
