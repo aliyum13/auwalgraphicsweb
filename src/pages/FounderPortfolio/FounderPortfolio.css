@@ -342,7 +342,7 @@
     gap:48px;
     padding:100px 0 60px;
   }
-  .ag-founder__portrait-wrap { display:none; } /* hide portrait on tablet/mobile */
+  .ag-founder__portrait-wrap { display:none; } /* hide portrait on tablet only */
   .ag-founder__skills-grid { grid-template-columns:repeat(2,1fr); }
   .ag-founder__portfolio-grid { grid-template-columns:repeat(2,1fr); }
   .ag-founder__tools-grid  { grid-template-columns:repeat(4,1fr); }
@@ -351,6 +351,13 @@
 
 /* ── Mobile (≤640px) ── */
 @media (max-width:640px) {
+  /* ✅ Re-show portrait on mobile — stacks below text in single-column layout */
+  .ag-founder__portrait-wrap {
+    display:block;
+    max-width:280px;
+    margin:0 auto;
+  }
+
   /* Hero */
   .ag-founder__hero { padding:0 5%; }
   .ag-founder__hero-inner { padding:90px 0 50px; }
