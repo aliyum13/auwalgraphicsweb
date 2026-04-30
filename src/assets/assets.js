@@ -3,11 +3,6 @@
 // ============================================================
 import founderPhoto from './founder image.jpeg'
 
-export const founderData = {
-  name: 'Muhammad Auwal Ali',
-  photo: './founder-image.jpeg',  
-  ...
-
 export const servicesData = [
   {
     id: 'graphic-design',
@@ -34,11 +29,11 @@ export const servicesData = [
       { step: '04', title: 'Final Delivery', desc: 'You receive all files in every format needed.' },
     ],
     gallery: [
-  '/graphic-design-sample-1.png',
-  '/graphic-design-sample-2.png',
-  '/graphic-design-sample-3.png',
-  '/graphic-design-sample-4.png',
-],
+      '/graphic-design-sample-1.png',
+      '/graphic-design-sample-2.png',
+      '/graphic-design-sample-3.png',
+      '/graphic-design-sample-4.png',
+    ],
     turnaround: '24hrs – 5 days',
     color: 'from-blue-900 to-[#2c459d]',
   },
@@ -66,12 +61,12 @@ export const servicesData = [
       { step: '03', title: 'Development', desc: 'We build the site with clean, fast, responsive code.' },
       { step: '04', title: 'Launch & Handover', desc: 'Site goes live, you get full access and training.' },
     ],
-     gallery: [
-  '/web-design-sample-1.png',
-  '/web-design-sample-2.png',
-  '/web-design-sample-3.png',
-  '/web-design-sample-4.png',
-],
+    gallery: [
+      '/web-design-sample-1.png',
+      '/web-design-sample-2.png',
+      '/web-design-sample-3.png',
+      '/web-design-sample-4.png',
+    ],
     turnaround: '5 – 21 days',
     color: 'from-indigo-900 to-[#2c459d]',
   },
@@ -100,11 +95,11 @@ export const servicesData = [
       { step: '04', title: 'Delivery', desc: 'Nationwide delivery or Abuja pickup available.' },
     ],
     gallery: [
-  '/printing-sample-1.png',
-  '/printing-sample-2.png',
-  '/printing-sample-3.png',
-  '/printing-sample-4.png',
-],
+      '/printing-sample-1.png',
+      '/printing-sample-2.png',
+      '/printing-sample-3.png',
+      '/printing-sample-4.png',
+    ],
     turnaround: '2 – 7 days',
     color: 'from-slate-900 to-[#2c459d]',
   },
@@ -133,11 +128,11 @@ export const servicesData = [
       { step: '04', title: 'Brand Delivery', desc: 'Complete brand files and guidelines delivered.' },
     ],
     gallery: [
-  '/branding-sample-1.png',
-  '/branding-sample-2.png',
-  '/branding-sample-3.png',
-  '/branding-sample-4.png',
-],
+      '/branding-sample-1.png',
+      '/branding-sample-2.png',
+      '/branding-sample-3.png',
+      '/branding-sample-4.png',
+    ],
     turnaround: '7 – 14 days',
     color: 'from-blue-950 to-[#2c459d]',
   },
@@ -166,11 +161,11 @@ export const servicesData = [
       { step: '04', title: 'Delivery', desc: 'Files optimised and ready for every platform.' },
     ],
     gallery: [
-  '/media-production-sample-1.png',
-  '/media-production-sample-2.png',
-  '/media-production-sample-3.png',
-  '/media-production-sample-4.png',
-],
+      '/media-production-sample-1.png',
+      '/media-production-sample-2.png',
+      '/media-production-sample-3.png',
+      '/media-production-sample-4.png',
+    ],
     turnaround: '3 – 10 days',
     color: 'from-zinc-900 to-[#2c459d]',
   },
@@ -199,12 +194,11 @@ export const servicesData = [
       { step: '04', title: 'Review & Optimise', desc: 'We track results and improve based on data.' },
     ],
     gallery: [
-  '/business-support-sample-1.png',
-  '/business-support-sample-2.png',
-  '/business-support-sample-3.png',
-  '/business-support-sample-4.png',
-  
-],
+      '/business-support-sample-1.png',
+      '/business-support-sample-2.png',
+      '/business-support-sample-3.png',
+      '/business-support-sample-4.png',
+    ],
     turnaround: 'Ongoing / Retainer',
     color: 'from-gray-900 to-[#2c459d]',
   },
@@ -225,10 +219,10 @@ export const portfolioData = [
     solution: 'We developed a complete brand identity system — logo, colour palette, typography, stationery suite and brand guidelines — giving them a premium, trustworthy corporate image.',
     result: 'Within 3 months of the rebrand, the client reported a 40% increase in proposal acceptance rate and secured two major government contracts.',
     gallery: [
-    '/corp-1.png',                  // ← main large image
-    '/corp-2.png',                  // ← secondary left
-    '/corp-3.png',                  // ← secondary right
-  ],
+      '/corp-1.png',
+      '/corp-2.png',
+      '/corp-3.png',
+    ],
     tags: ['Logo Design', 'Brand Identity', 'Stationery', 'Guidelines'],
   },
   {
@@ -295,7 +289,7 @@ export const portfolioData = [
     id: 'branded-merchandise',
     title: 'Brand Merchandise Campaign',
     client: 'atizens, mataset',
-    industry: ' Events',
+    industry: 'Events',
     category: 'Printing',
     icon: '👕',
     gradient: 'from-[#065f46] to-[#047857]',
@@ -377,13 +371,14 @@ export const faqData = [
   },
 ]
 
+// ── SINGLE founderData export (duplicate removed, photo uses the import) ──
 export const founderData = {
   name: 'Muhammad Auwal Ali',
   title: 'Founder & Creative Director — Auwal Graphics',
   tagline: 'Graphic Designer • Web Developer • Brand Strategist',
   bio: 'I am a multi-skilled creative professional based in Abuja, Nigeria, with deep expertise in graphic design, web development, and brand strategy. I founded Auwal Graphics to help Nigerian businesses access world-class creative services at accessible prices.',
   bio2: 'Every project starts with a simple question: what does this business actually need? Not just a logo or a website — but a visual solution that helps them attract customers, build trust, and grow. That business-first approach is what sets my work apart.',
-  photo: 'src/assets/founder image.jpeg', // ← ADD your photo URL here
+  photo: founderPhoto, // ← uses the import at the top of this file
   skills: [
     { name: 'Graphic Design', level: 95, icon: '🎨' },
     { name: 'Web Development', level: 85, icon: '💻' },
@@ -414,11 +409,11 @@ export const founderData = {
   ],
   socials: {
     whatsapp: 'https://wa.me/2349067816736',
-    email: 'auwalgraphicsinfo@gmail.com',    // UPDATE
-    instagram: 'https://instagram.com/auwal.graphics', // UPDATE
-    linkedin: 'https://linkedin.com/in/',// UPDATE
-    behance: 'https://behance.net/',     // UPDATE
-    twitter: 'https://twitter.com/',     // UPDATE
+    email: 'auwalgraphicsinfo@gmail.com',
+    instagram: 'https://instagram.com/auwal.graphics',
+    linkedin: 'https://linkedin.com/in/',
+    behance: 'https://behance.net/',
+    twitter: 'https://twitter.com/',
   },
   timeline: [
     { year: '2019', title: 'Started as a Graphic Designer', desc: 'Began creating logos, flyers, and social media graphics for businesses in Abuja.' },
@@ -430,17 +425,16 @@ export const founderData = {
   ],
 }
 
-// UPDATE ALL FIELDS BELOW WITH YOUR REAL INFORMATION
 export const contactInfo = {
   phone: '+234 901 590 6190',
   whatsapp: '+234 906 781 6736',
-  email: 'auwalgraphicsinfo@gmail.com',        // ← UPDATE
+  email: 'auwalgraphicsinfo@gmail.com',
   address: 'wuse zone 4 fabdal plaza, suite: 211 Nigeria',
   socials: {
-    facebook: 'https://facebook.com/',     // ← UPDATE
-    instagram: 'https://instagram.com/auwal.graphics',   // ← UPDATE
-    twitter: 'https://twitter.com/',       // ← UPDATE
-    linkedin: 'https://linkedin.com/',     // ← UPDATE
-    youtube: 'https://youtube.com/',       // ← UPDATE or remove
+    facebook: 'https://facebook.com/',
+    instagram: 'https://instagram.com/auwal.graphics',
+    twitter: 'https://twitter.com/',
+    linkedin: 'https://linkedin.com/',
+    youtube: 'https://youtube.com/',
   },
 }
