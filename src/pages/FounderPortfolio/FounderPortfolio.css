@@ -106,9 +106,18 @@
   display:flex; align-items:center; justify-content:center;
   overflow:hidden; position:relative;
 }
-.ag-founder__portrait img { width:100%; height:100%; object-fit:cover; }
+/* ✅ Photo always fills the portrait box */
+.ag-founder__portrait img {
+  width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+  display:block;
+}
+.ag-founder__portrait-fallback {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:100%; height:100%; padding:24px;
+}
 .ag-founder__portrait-placeholder { font-size:7rem; opacity:0.2; }
-.ag-founder__portrait-placeholder-text { font-size:12px; color:rgba(255,255,255,0.3); text-align:center; margin-top:12px; padding:0 24px; }
+.ag-founder__portrait-placeholder-text { font-size:12px; color:rgba(255,255,255,0.3); text-align:center; margin-top:12px; }
 .ag-founder__name-card {
   position:absolute; bottom:20px; left:20px; right:20px;
   background:rgba(0,0,0,0.8); backdrop-filter:blur(12px);
@@ -124,9 +133,9 @@
   box-shadow:0 4px 20px rgba(0,0,0,0.2); white-space:nowrap; z-index:2;
 }
 .dark .ag-founder__portrait-badge { background:#1e2030; color:#eee; }
-.ag-founder__portrait-badge:nth-child(1) { top:15%; right:-20px; }
-.ag-founder__portrait-badge:nth-child(2) { top:42%; left:-20px; }
-.ag-founder__portrait-badge:nth-child(3) { bottom:28%; right:-20px; }
+.ag-founder__portrait-badge:nth-child(2) { top:15%; right:-20px; }
+.ag-founder__portrait-badge:nth-child(3) { top:42%; left:-20px; }
+.ag-founder__portrait-badge:nth-child(4) { bottom:28%; right:-20px; }
 
 /* ── BRAND STATEMENT ── */
 .ag-founder__statement {
@@ -170,7 +179,7 @@
 .ag-founder__skill-pct { font-size:13px; font-weight:900; color:#2c459d; }
 .ag-founder__skill-bar { height:7px; background:#f0f0f5; border-radius:100px; overflow:hidden; }
 .dark .ag-founder__skill-bar { background:#1e2030; }
-.ag-founder__skill-fill { height:100%; background:#2c459d; border-radius:100px; transition:width 1.2s ease; }
+.ag-founder__skill-fill { height:100%; background:#2c459d; border-radius:100px; }
 
 /* ── PORTFOLIO (inside founder page) ── */
 .ag-founder__portfolio { padding:100px 5%; background:#fff; }
@@ -182,11 +191,54 @@
 .ag-founder__filter-btn {
   padding:8px 18px; border-radius:8px; font-size:13px;
   font-weight:600; border:none; font-family:'Poppins',sans-serif; transition:all 0.2s;
+  cursor:pointer;
 }
 .ag-founder__filter-btn.active { background:#2c459d; color:#fff; }
 .ag-founder__filter-btn:not(.active) { background:#f0f0f5; color:#555; }
 .dark .ag-founder__filter-btn:not(.active) { background:#1e2030; color:#aaa; }
 .ag-founder__filter-btn:not(.active):hover { background:#e0e0ea; }
+
+/* ✅ Portfolio grid — responsive via CSS (not inline styles) */
+.ag-founder__portfolio-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+/* ✅ Portfolio card styles extracted from inline */
+.ag-founder__portfolio-card {
+  display:block; border-radius:16px; overflow:hidden;
+  border:1.5px solid rgba(0,0,0,0.08);
+  text-decoration:none; transition:all 0.3s;
+  background:#fff;
+}
+.dark .ag-founder__portfolio-card { background:#151620; border-color:#1e2030; }
+.ag-founder__portfolio-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.1); }
+
+.ag-portfolio__thumb {
+  height:200px; display:flex; align-items:center;
+  justify-content:center; font-size:3rem; position:relative; overflow:hidden;
+}
+.ag-portfolio__overlay {
+  position:absolute; inset:0; background:rgba(0,0,0,0.5);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity 0.3s;
+}
+.ag-founder__portfolio-card:hover .ag-portfolio__overlay { opacity:1; }
+.ag-portfolio__view-btn {
+  color:#fff; font-size:13px; font-weight:700;
+  background:rgba(255,255,255,0.15); padding:10px 18px;
+  border-radius:8px; border:1px solid rgba(255,255,255,0.2);
+}
+
+.ag-founder__portfolio-card-info { padding:16px 18px; }
+.ag-founder__portfolio-card-cat {
+  font-size:10px; font-weight:800; text-transform:uppercase;
+  letter-spacing:0.12em; color:#2c459d; display:block; margin-bottom:4px;
+}
+.ag-founder__portfolio-card-title { font-weight:700; font-size:14px; color:#000; margin-bottom:3px; }
+.dark .ag-founder__portfolio-card-title { color:#fff; }
+.ag-founder__portfolio-card-client { font-size:12px; color:#aaa; }
 
 /* ── TIMELINE ── */
 .ag-founder__timeline { padding:100px 5%; background:#f8f9ff; }
@@ -260,7 +312,7 @@
   padding:14px; border-radius:12px; text-decoration:none; transition:background 0.2s;
 }
 .ag-founder__hire-btn-email:hover { background:rgba(255,255,255,0.2); }
-.ag-founder__hire-socials { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+.ag-founder__hire-socials { display:flex; gap:8px; justify-content:center; margin-top:16px; flex-wrap:wrap; }
 .ag-founder__hire-social {
   background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
   color:rgba(255,255,255,0.7); font-size:12px; font-weight:600;
@@ -279,16 +331,80 @@
   50%      { transform:scale(1.4); opacity:0.6; }
 }
 
-/* Responsive */
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+/* ── Tablet (≤1024px) ── */
 @media (max-width:1024px) {
-  .ag-founder__hero-inner { grid-template-columns:1fr; gap:48px; }
+  .ag-founder__hero-inner {
+    grid-template-columns:1fr;
+    gap:48px;
+    padding:100px 0 60px;
+  }
+  .ag-founder__portrait-wrap { display:none; } /* hide portrait on tablet/mobile */
   .ag-founder__skills-grid { grid-template-columns:repeat(2,1fr); }
+  .ag-founder__portfolio-grid { grid-template-columns:repeat(2,1fr); }
   .ag-founder__tools-grid  { grid-template-columns:repeat(4,1fr); }
-  .ag-founder__recruiter-inner { grid-template-columns:1fr; }
-  .ag-founder__portrait-wrap { display:none; }
+  .ag-founder__recruiter-inner { grid-template-columns:1fr; gap:40px; }
 }
+
+/* ── Mobile (≤640px) ── */
 @media (max-width:640px) {
+  /* Hero */
   .ag-founder__hero { padding:0 5%; }
+  .ag-founder__hero-inner { padding:90px 0 50px; }
+  .ag-founder__name { font-size:clamp(2.4rem,10vw,3.2rem); }
+
+  /* Hero buttons — stack vertically, full width */
+  .ag-founder__hero-btns { flex-direction:column; }
+  .ag-founder__btn-primary,
+  .ag-founder__btn-ghost,
+  .ag-founder__btn-cv {
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  /* Skills — single column */
   .ag-founder__skills-grid { grid-template-columns:1fr; }
-  .ag-founder__tools-grid  { grid-template-columns:repeat(3,1fr); }
+
+  /* Portfolio — single column */
+  .ag-founder__portfolio-grid { grid-template-columns:1fr; gap:14px; }
+
+  /* Filter buttons — wrap nicely */
+  .ag-founder__portfolio-filters { gap:6px; }
+  .ag-founder__filter-btn { font-size:12px; padding:7px 12px; }
+
+  /* Tools — 2 columns on small screens */
+  .ag-founder__tools-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
+  .ag-founder__tool { padding:16px 10px; }
+  .ag-founder__tool-icon { font-size:1.3rem; }
+  .ag-founder__tool-name { font-size:11px; }
+
+  /* Timeline — tighter padding */
+  .ag-founder__tl-wrap { padding-left:20px; }
+  .ag-founder__tl-item::before { left:-28px; }
+
+  /* Hire card */
+  .ag-founder__hire-card { padding:28px 20px; border-radius:16px; }
+  .ag-founder__hire-card h3 { font-size:1.3rem; }
+
+  /* Recruiter section padding */
+  .ag-founder__recruiter { padding:64px 5%; }
+  .ag-founder__skills    { padding:64px 5%; }
+  .ag-founder__portfolio { padding:64px 5%; }
+  .ag-founder__timeline  { padding:64px 5%; }
+  .ag-founder__tools     { padding:64px 5%; }
+
+  /* Statement */
+  .ag-founder__statement { padding:44px 5%; }
+}
+
+/* ── Very small (≤380px) ── */
+@media (max-width:380px) {
+  .ag-founder__tools-grid { grid-template-columns:repeat(2,1fr); }
+  .ag-founder__roles { gap:6px; }
+  .ag-founder__role { font-size:11px; padding:6px 10px; }
+  .ag-founder__hire-socials { flex-direction:column; align-items:center; }
 }
