@@ -9,7 +9,10 @@ const filters = ['All','Branding','Graphic Design','Web Design','Print Design','
 const FounderPortfolio = () => {
   useEffect(() => { window.scrollTo(0, 0) }, [])
   const [activeFilter, setActiveFilter] = useState('All')
+  const [imgError, setImgError] = useState(false)
   const filtered = activeFilter === 'All' ? portfolioData : portfolioData.filter(p => p.category === activeFilter)
+
+  const showPhoto = founderData.photo && founderData.photo.trim() !== '' && !imgError
 
   return (
     <div className='ag-founder page-enter'>
@@ -48,15 +51,20 @@ const FounderPortfolio = () => {
           <motion.div initial={{ opacity:0,x:40 }} animate={{ opacity:1,x:0 }} transition={{ duration:0.8, delay:0.3 }}>
             <div className='ag-founder__portrait-wrap'>
               <div className='ag-founder__portrait'>
-                {founderData.photo
-                  ? <img src={founderData.photo} alt={founderData.name} />
-                  : <>
-                      <div>
-                        <div className='ag-founder__portrait-placeholder'>👨‍💻</div>
-                        <p className='ag-founder__portrait-placeholder-text'>Add your photo URL in assets.js founderData.photo</p>
-                      </div>
-                    </>
-                }
+                {showPhoto ? (
+                  <img
+                    src={founderData.photo}
+                    alt={founderData.name}
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className='ag-founder__portrait-fallback'>
+                    <div className='ag-founder__portrait-placeholder'>👨‍💻</div>
+                    <p className='ag-founder__portrait-placeholder-text'>
+                      Add your photo URL in assets.js founderData.photo
+                    </p>
+                  </div>
+                )}
                 <div className='ag-founder__name-card'>
                   <div className='ag-founder__name-card-name'>{founderData.name}</div>
                   <div className='ag-founder__name-card-role'>Creative Director · Auwal Graphics</div>
@@ -134,24 +142,22 @@ const FounderPortfolio = () => {
             </button>
           ))}
         </div>
-        {/* Reuse portfolio grid styles */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:18 }}>
+        {/* ✅ Fixed: moved to CSS class so breakpoints work */}
+        <div className='ag-founder__portfolio-grid'>
           {filtered.map((p,i) => (
             <motion.div key={p.id} initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }}
               viewport={{ once:true }} transition={{ duration:0.4, delay:i*0.07 }}>
-              <Link to={`/portfolio/${p.id}`} style={{ display:'block', borderRadius:16, overflow:'hidden',
-                border:'1.5px solid rgba(0,0,0,0.08)', textDecoration:'none', transition:'all 0.3s' }}
-                className='ag-portfolio__card'>
-                <div className={`ag-portfolio__thumb bg-gradient-to-br ${p.gradient}`} style={{ height:200, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'3rem' }}>
+              <Link to={`/portfolio/${p.id}`} className='ag-portfolio__card ag-founder__portfolio-card'>
+                <div className={`ag-portfolio__thumb bg-gradient-to-br ${p.gradient}`}>
                   {p.icon}
                   <div className='ag-portfolio__overlay'>
                     <span className='ag-portfolio__view-btn'>View Case Study →</span>
                   </div>
                 </div>
-                <div style={{ padding:'16px 18px', background:'#fff' }}>
-                  <span style={{ fontSize:10, fontWeight:800, textTransform:'uppercase', letterSpacing:'0.12em', color:'#2c459d', display:'block', marginBottom:4 }}>{p.category}</span>
-                  <div style={{ fontWeight:700, fontSize:14, color:'#000', marginBottom:3 }}>{p.title}</div>
-                  <div style={{ fontSize:12, color:'#aaa' }}>{p.client}</div>
+                <div className='ag-founder__portfolio-card-info'>
+                  <span className='ag-founder__portfolio-card-cat'>{p.category}</span>
+                  <div className='ag-founder__portfolio-card-title'>{p.title}</div>
+                  <div className='ag-founder__portfolio-card-client'>{p.client}</div>
                 </div>
               </Link>
             </motion.div>
