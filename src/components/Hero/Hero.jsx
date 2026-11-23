@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'motion/react'
 import './Hero.css'
 
-const badges = ['Fast Delivery', 'Premium Quality', 'Abuja Based', 'Nationwide Service']
+const badges = ['Any Quantity', 'Premium Quality', 'Abuja Based', 'Nationwide Delivery']
 
 const Hero = ({ openPopup }) => (
   <div className='ag-hero' id='hero'>
@@ -20,18 +20,18 @@ const Hero = ({ openPopup }) => (
       >
         <div className='ag-hero__eyebrow'>
           <span className='ag-hero__eyebrow-dot' />
-          🇳🇬 Abuja's Premium Creative Agency
+          🇳🇬 Clothing Printing in Abuja
         </div>
 
         <h1 className='ag-hero__title'>
-          We Design, Print &<br />
-          <span className='highlight'>Build Brands</span><br />
-          That Stand Out
+          Custom Printed<br />
+          <span className='highlight'>Shirts & Clothing</span><br />
+          For Your Brand
         </h1>
 
         <p className='ag-hero__sub'>
-          Helping Nigerian businesses grow with premium graphic design, professional
-          printing, stunning websites, powerful branding, and strategic media solutions.
+          T-shirts, polos, hoodies, uniforms and event wear — printed with your logo,
+          design or message. From 1 piece to bulk orders, delivered across Nigeria.
         </p>
 
         <div className='ag-hero__btns'>
@@ -39,13 +39,13 @@ const Hero = ({ openPopup }) => (
             🚀 Get a Free Quote
           </button>
           <a className='ag-hero__btn-outline' href='/#portfolio'>
-            View Portfolio →
+            See Our Work →
           </a>
         </div>
 
         <p className='ag-hero__trust'>
           <span className='ag-hero__trust-check'>✓</span>
-          Trusted by businesses, brands & entrepreneurs across Nigeria
+          Trusted by businesses, events & teams across Nigeria
         </p>
       </motion.div>
 
@@ -69,24 +69,24 @@ const Hero = ({ openPopup }) => (
                 <div className='ag-hero__mock-line w40' />
               </div>
             </div>
-            <p className='ag-hero__mock-label'>🌐 Website Design</p>
+            <p className='ag-hero__mock-label'>👕 Custom T-Shirts</p>
           </div>
 
           {/* Print mockup */}
           <div className='ag-hero__mockup-card print'>
-            <div className='ag-hero__mock-icon'>👕</div>
-            <p className='ag-hero__mock-label'>🖨️ Print & Merch</p>
+            <div className='ag-hero__mock-icon'>🎽</div>
+            <p className='ag-hero__mock-label'>🎽 Branded Polos</p>
           </div>
 
           {/* Social mockup */}
           <div className='ag-hero__mockup-card social'>
-            <div className='ag-hero__mock-icon'>📲</div>
+            <div className='ag-hero__mock-icon'>🧥</div>
             <div>
               <div className='ag-hero__mock-stats'>
-                <span className='ag-hero__mock-pill'>+2.4k</span>
-                <span className='ag-hero__mock-pill'>Reach</span>
+                <span className='ag-hero__mock-pill'>Hoodies</span>
+                <span className='ag-hero__mock-pill'>Uniforms</span>
               </div>
-              <p className='ag-hero__mock-label' style={{ marginTop: 6 }}>📊 Social Media</p>
+              <p className='ag-hero__mock-label' style={{ marginTop: 6 }}>👔 Team & Event Wear</p>
             </div>
           </div>
         </div>

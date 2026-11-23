@@ -19,22 +19,21 @@ const QuotePopup = ({ isOpen, onClose }) => {
         <button className='ag-popup__close' onClick={onClose}>✕</button>
 
         <h3 className='ag-popup__title'>Get Your Free Quote</h3>
-        <p className='ag-popup__sub'>Tell us about your project and we'll respond within the hour.</p>
+        <p className='ag-popup__sub'>Tell us what you want printed and we'll respond within the hour.</p>
 
         <form className='ag-popup__form' onSubmit={handleSubmit}>
           <input type='text'  placeholder='Your Name'              required />
           <input type='tel'   placeholder='WhatsApp / Phone Number' required />
           <select>
-            <option value=''>Service Needed…</option>
-            <option>Graphic Design</option>
-            <option>Web Design</option>
-            <option>Printing</option>
-            <option>Branding</option>
-            <option>Media Production</option>
-            <option>Business Support</option>
-            <option>Multiple Services</option>
+            <option value=''>What do you want printed?</option>
+            <option>Custom T-Shirts</option>
+            <option>Branded Polo Shirts</option>
+            <option>Hoodies & Sweatshirts</option>
+            <option>Uniforms & Corporate Wear</option>
+            <option>Event & Campaign Shirts</option>
+            <option>Other Clothing</option>
           </select>
-          <textarea placeholder='Brief project description…' />
+          <textarea placeholder='Quantity, sizes, colours and your design idea…' />
           <button type='submit' className='ag-popup__submit'>Send Request →</button>
         </form>
       </div>

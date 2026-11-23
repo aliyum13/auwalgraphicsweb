@@ -12,10 +12,10 @@ const CTABanner = ({ openPopup }) => (
       transition={{ duration:0.7 }}
       viewport={{ once:true }}
     >
-      <h2 className='ag-cta__title'>Ready to Upgrade Your Brand?</h2>
+      <h2 className='ag-cta__title'>Ready to Print Your Shirts?</h2>
       <p className='ag-cta__sub'>
-        Get professional design, print, and web solutions that help your Nigerian
-        business grow, attract customers, and build lasting trust.
+        Custom T-shirts, polos, hoodies and uniforms for your brand, team or event —
+        any quantity, delivered across Nigeria.
       </p>
       <div className='ag-cta__btns'>
         <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-cta__btn-wa'>

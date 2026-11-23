@@ -35,9 +35,9 @@ const Footer = ({ openPopup }) => (
         </Link>
 
         <p className='ag-footer__bio'>
-          <strong style={{ color: '#fff' }}>Auwal Graphics</strong> is Abuja's premier creative agency —
-          delivering premium graphic design, professional printing, stunning websites,
-          and powerful branding to businesses across Nigeria.
+          <strong style={{ color: '#fff' }}>Auwal Graphics</strong> prints custom T-shirts, polos, hoodies,
+          uniforms and event wear for businesses, teams and events — based in Abuja,
+          delivering across Nigeria.
         </p>
 
         <div className='ag-footer__socials'>
@@ -76,14 +76,13 @@ const Footer = ({ openPopup }) => (
 
       {/* ── SERVICES ── */}
       <div className='ag-footer__col'>
-        <h2>Services</h2>
+        <h2>What We Print</h2>
         <ul>
-          <li><Link to='/services/graphic-design'>Graphic Design</Link></li>
-          <li><Link to='/services/web-design'>Web Design</Link></li>
-          <li><Link to='/services/printing'>Printing</Link></li>
-          <li><Link to='/services/branding'>Branding</Link></li>
-          <li><Link to='/services/media-production'>Media Production</Link></li>
-          <li><Link to='/services/business-support'>Business Support</Link></li>
+          <li><Link to='/services/clothing-printing'>Custom T-Shirts</Link></li>
+          <li><Link to='/services/clothing-printing'>Branded Polo Shirts</Link></li>
+          <li><Link to='/services/clothing-printing'>Hoodies & Sweatshirts</Link></li>
+          <li><Link to='/services/clothing-printing'>Uniforms & Corporate Wear</Link></li>
+          <li><Link to='/services/clothing-printing'>Event & Campaign Shirts</Link></li>
         </ul>
       </div>
 

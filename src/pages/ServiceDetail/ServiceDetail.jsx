@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, Navigate } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { servicesData } from '../../assets/assets'
 import './ServiceDetail.css'
@@ -12,12 +12,8 @@ const ServiceDetail = () => {
 
   useEffect(() => { window.scrollTo(0, 0) }, [id])
 
-  if (!svc) return (
-    <div style={{ minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:16 }}>
-      <h2>Service not found</h2>
-      <Link to='/'>← Back to Home</Link>
-    </div>
-  )
+  // Old service links (web design, branding, etc.) now point to clothing printing
+  if (!svc) return <Navigate to={`/services/${servicesData[0].id}`} replace />
 
   return (
     <div className='ag-svc-detail page-enter'>
@@ -63,8 +59,8 @@ const ServiceDetail = () => {
             <p className='ag-svc-detail__desc'>{svc.fullDescription}</p>
             <p className='ag-svc-detail__desc'>
               Whether you are a startup building from scratch, an established business looking to grow,
-              or an organisation that needs professional creative support — our {svc.title.toLowerCase()} service
-              is designed to deliver measurable results for your Nigerian business.
+              or an organisation planning an event — our {svc.title.toLowerCase()} service
+              puts your brand on clothing people are proud to wear.
             </p>
           </motion.div>
           <motion.div
@@ -125,7 +121,7 @@ const ServiceDetail = () => {
         <motion.div className='ag-svc-detail__cta'
           initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration:0.6 }}>
           <h2>Ready to Get Started?</h2>
-          <p>Tell us about your {svc.title.toLowerCase()} project and we will respond within the hour with a clear plan and fair price.</p>
+          <p>Tell us about your clothing order and we will respond within the hour with a clear plan and fair price.</p>
           <div className='ag-svc-detail__cta-btns'>
             <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-svc-detail__cta-btn-wa'>
               📱 WhatsApp Us Now
@@ -135,7 +131,7 @@ const ServiceDetail = () => {
         </motion.div>
 
         {/* Other services */}
-        <div>
+        {others.length > 0 && <div>
           <h2 className='ag-svc-detail__others-title'>Explore Other Services</h2>
           <div className='ag-svc-detail__others-grid'>
             {others.map(s => (
@@ -147,7 +143,7 @@ const ServiceDetail = () => {
               </Link>
             ))}
           </div>
-        </div>
+        </div>}
 
       </div>
     </div>

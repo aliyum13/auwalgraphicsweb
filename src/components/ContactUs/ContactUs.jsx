@@ -33,7 +33,7 @@ const ContactUs = () => {
       <div className='ag-contact__header'>
         <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
           <span className='ag-contact__label'>Get In Touch</span>
-          <h2 className='ag-contact__title'>Start Your Project Today</h2>
+          <h2 className='ag-contact__title'>Start Your Order Today</h2>
           <p className='ag-contact__sub'>Fill in the form or reach us directly on WhatsApp. We respond within the hour.</p>
         </motion.div>
       </div>
@@ -91,22 +91,21 @@ const ContactUs = () => {
           </div>
 
           <div className='ag-contact__field'>
-            <label>Service Needed</label>
+            <label>Clothing Type</label>
             <select name='service'>
-              <option value=''>Select a service…</option>
-              <option>Graphic Design</option>
-              <option>Web Design</option>
-              <option>Printing</option>
-              <option>Branding</option>
-              <option>Media Production</option>
-              <option>Business Support</option>
-              <option>Multiple Services</option>
+              <option value=''>What do you want printed?</option>
+              <option>Custom T-Shirts</option>
+              <option>Branded Polo Shirts</option>
+              <option>Hoodies & Sweatshirts</option>
+              <option>Uniforms & Corporate Wear</option>
+              <option>Event & Campaign Shirts</option>
+              <option>Other Clothing</option>
             </select>
           </div>
 
           <div className='ag-contact__field'>
-            <label>Project Details</label>
-            <textarea name='message' placeholder='Tell us about your project, budget, and timeline…' required />
+            <label>Order Details</label>
+            <textarea name='message' placeholder='Quantity, sizes, colours, your design idea and deadline…' required />
           </div>
 
           <button type='submit' className='ag-contact__submit'>

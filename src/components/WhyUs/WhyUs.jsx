@@ -3,11 +3,11 @@ import { motion } from 'motion/react'
 import './WhyUs.css'
 
 const points = [
-  { icon:'✅', title:'Professional Designs That Convert',    desc:'We design for results — attracting customers and building trust, not just aesthetics.' },
+  { icon:'✅', title:'Clean, Professional Prints',           desc:'Sharp, well-placed prints that make your team, event or brand look the part.' },
   { icon:'⚡', title:'Reliable & Fast Delivery',             desc:'Deadlines are sacred. We deliver quality work on time, every time — no excuses.' },
-  { icon:'💰', title:'Affordable Premium Quality',           desc:'World-class design quality at Nigerian pricing — maximum value for every naira.' },
-  { icon:'🏢', title:'One Vendor for All Your Needs',        desc:'Design, print, web, branding — stop juggling vendors. We handle everything here.' },
-  { icon:'🇳🇬', title:'Deep Nigerian Market Understanding',  desc:'We understand the Nigerian market and customer psychology — visuals that resonate.' },
+  { icon:'💰', title:'Affordable Premium Quality',           desc:'Quality clothing printing at fair Nigerian prices — maximum value for every naira.' },
+  { icon:'🎨', title:'Artwork Included When You Need It',    desc:'No design yet? We prepare print-ready artwork and show you a mockup before printing.' },
+  { icon:'👕', title:'Any Quantity',                         desc:'From a single custom T-shirt to bulk orders for staff, events and campaigns.' },
   { icon:'💬', title:'Fast Response & Communication',        desc:'WhatsApp-ready, responsive team. We keep you informed at every project stage.' },
 ]
 
@@ -31,13 +31,13 @@ const WhyUs = () => (
           <div className='ag-whyus__logo-text'>
             <span className='blue-part'>Auwal</span>Graphics
           </div>
-          <p className='ag-whyus__logo-sub'>Premium Creative Agency · Abuja, Nigeria</p>
+          <p className='ag-whyus__logo-sub'>Clothing Printing · Abuja, Nigeria</p>
         </div>
 
         {/* Tagline */}
         <div className='ag-whyus__tagline'>
           <div className='ag-whyus__tagline-line' />
-          <p>Helping Nigerian businesses grow through world-class design.</p>
+          <p>Putting your brand on clothing people are proud to wear.</p>
         </div>
 
         {/* Stats */}

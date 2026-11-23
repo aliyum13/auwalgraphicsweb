@@ -3,9 +3,9 @@ import { motion } from 'motion/react'
 import './HowItWorks.css'
 
 const steps = [
-  { icon:'💬', num:'Step 01', title:'Tell Us What You Need',  desc:'Contact us via WhatsApp, phone, or quote form. Tell us your project, timeline and budget. We respond fast with a clear plan and price.' },
-  { icon:'🎨', num:'Step 02', title:'We Design & Produce',    desc:'Our creative team gets to work immediately. We send drafts, make revisions, and ensure you are 100% satisfied before we finalise.' },
-  { icon:'🚀', num:'Step 03', title:'You Receive & Grow',     desc:'Get your files, printed materials, or live website. Watch your brand attract more customers, build trust, and grow faster.' },
+  { icon:'💬', num:'Step 01', title:'Tell Us What You Need',  desc:'Contact us via WhatsApp, phone, or quote form. Tell us the clothing type, quantity, sizes and your design. We respond fast with a clear price.' },
+  { icon:'🎨', num:'Step 02', title:'Approve & We Print',     desc:'We send you a mockup of your design on the clothing. Once you approve, your order goes into printing.' },
+  { icon:'🚚', num:'Step 03', title:'You Receive & Wear',     desc:'Pick up in Abuja or get delivery anywhere in Nigeria. Your team, event or customers wear your brand with pride.' },
 ]
 
 const HowItWorks = () => (
@@ -14,7 +14,7 @@ const HowItWorks = () => (
       <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
         <span className='ag-how__label'>Our Process</span>
         <h2 className='ag-how__title'>Simple Process. Serious Results.</h2>
-        <p className='ag-how__sub'>Three steps to a brand that stands out and a business that grows.</p>
+        <p className='ag-how__sub'>Three steps from idea to printed clothing in your hands.</p>
       </motion.div>
     </div>
 

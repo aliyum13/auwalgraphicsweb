@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, Navigate } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { portfolioData } from '../../assets/assets'
 
@@ -10,14 +10,8 @@ const ProjectDetail = () => {
 
   useEffect(() => { window.scrollTo(0, 0) }, [id])
 
-  if (!project) {
-    return (
-      <div className='min-h-screen flex flex-col items-center justify-center gap-4 bg-white dark:bg-gray-950'>
-        <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Project not found</h2>
-        <Link to='/' className='text-[#2c459d] font-semibold hover:underline'>← Back to Home</Link>
-      </div>
-    )
-  }
+  // Removed projects (web, branding, packaging) send visitors back to the work section
+  if (!project) return <Navigate to='/#portfolio' replace />
 
   const others = portfolioData.filter(p => p.id !== id).slice(0, 3)
 
@@ -173,7 +167,7 @@ const ProjectDetail = () => {
         </motion.div>
 
         {/* Other projects */}
-        <div>
+        {others.length > 0 && <div>
           <h2 className='text-2xl font-black text-gray-900 dark:text-white mb-8'>
             More Projects
           </h2>
@@ -196,7 +190,7 @@ const ProjectDetail = () => {
               </Link>
             ))}
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   )

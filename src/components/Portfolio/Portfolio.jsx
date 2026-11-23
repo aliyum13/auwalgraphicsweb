@@ -1,36 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { portfolioData } from '../../assets/assets'
 import './Portfolio.css'
 
-const cats = ['All','Branding','Graphic Design','Web Design','Print Design','Packaging']
-
 const Portfolio = () => {
-  const [active, setActive] = useState('All')
-  const items = active === 'All' ? portfolioData : portfolioData.filter(p => p.category === active)
+  const items = portfolioData
 
   return (
     <section className='ag-portfolio' id='portfolio'>
       <div className='ag-portfolio__header'>
         <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
           <span className='ag-portfolio__label'>Our Work</span>
-          <h2 className='ag-portfolio__title'>Creative Work That Delivers Results</h2>
-          <p className='ag-portfolio__sub'>Real projects for real Nigerian businesses — see how we've helped brands stand out and grow.</p>
+          <h2 className='ag-portfolio__title'>Clothing We've Printed</h2>
+          <p className='ag-portfolio__sub'>Real orders for real Nigerian brands, teams and events.</p>
         </motion.div>
-      </div>
-
-      {/* Filters */}
-      <div className='ag-portfolio__filters'>
-        {cats.map(c => (
-          <button
-            key={c}
-            className={`ag-portfolio__filter-btn${active===c?' active':''}`}
-            onClick={() => setActive(c)}
-          >
-            {c}
-          </button>
-        ))}
       </div>
 
       {/* Grid */}
@@ -55,7 +39,7 @@ const Portfolio = () => {
       </div>
 
       <div className='ag-portfolio__cta-wrap'>
-        <a href='/#contact-us' className='ag-portfolio__cta-link'>Start Your Project →</a>
+        <a href='/#contact-us' className='ag-portfolio__cta-link'>Start Your Order →</a>
       </div>
     </section>
   )
