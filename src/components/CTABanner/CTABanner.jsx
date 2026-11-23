@@ -12,15 +12,15 @@ const CTABanner = ({ openPopup }) => (
       transition={{ duration:0.7 }}
       viewport={{ once:true }}
     >
-      <h2 className='ag-cta__title'>Ready to Print Your Shirts?</h2>
+      <h2 className='ag-cta__title'>Got a Design? Let's Print It.</h2>
       <p className='ag-cta__sub'>
-        Custom T-shirts, polos, hoodies and uniforms for your brand, team or event —
-        any quantity, delivered across Nigeria.
+        Print on demand T-shirts, polos and hoodies — no minimum order,
+        printed when you order, delivered across Nigeria.
       </p>
       <div className='ag-cta__btns'>
-        <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-cta__btn-wa'>
-          📱 Request Quote on WhatsApp
-        </a>
+        <button onClick={openPopup} className='ag-cta__btn-wa' style={{ border:'none', cursor:'pointer', fontFamily:'inherit' }}>
+          👕 Start Your Order
+        </button>
         <a href='tel:+2349015906190' className='ag-cta__btn-call'>
           📞 Call Now
         </a>

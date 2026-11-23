@@ -1,12 +1,67 @@
-# React + Vite
+# Auwal Graphics website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Print on demand clothing site for Auwal Graphics (auwalgraphics.com). React + Vite, deployed on Render.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+```
 
-## Expanding the ESLint configuration
+## Order automation with n8n
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The order page (`/order`, `src/pages/Order/Order.jsx`) sends every order to an n8n webhook.
+
+### 1. Create the webhook in n8n
+
+- Add a **Webhook** node.
+  - HTTP Method: `POST`
+  - Path: e.g. `order`
+  - Respond: `Immediately` (the site only needs a 200 response)
+  - Options → **Allowed Origins (CORS)**: `https://auwalgraphics.com` (add `http://localhost:5173` for testing)
+  - The uploaded design arrives as binary data named `design_file`; the other fields arrive under `body`.
+- Activate the workflow and copy the **Production URL**.
+
+### 2. Tell the website the webhook URL
+
+Set this environment variable on Render (Environment tab), then redeploy:
+
+```
+VITE_N8N_ORDER_WEBHOOK=https://YOUR-N8N-DOMAIN/webhook/order
+```
+
+Vite reads it at build time, so a redeploy is required after changing it. See `.env.example` for local testing.
+
+If the variable is not set, or the webhook fails, the form opens WhatsApp with the order details instead, so no order is lost.
+
+### 3. What n8n receives
+
+`multipart/form-data` with these fields:
+
+| Field | Example | Notes |
+|---|---|---|
+| `order_id` | `AG-261123-7K2P` | Generated on the site; shown to the customer |
+| `submitted_at` | `2026-11-23T16:28:45.474Z` | ISO time (UTC) |
+| `product` | `Polo Shirt` | T-Shirt, Polo Shirt, Hoodie, Sweatshirt, Long-Sleeve T-Shirt, Other |
+| `product_other` | | Filled when product is `Other` |
+| `colour` | `Navy` | White, Black, Navy, Grey, Red, Other |
+| `colour_other` | | Filled when colour is `Other` |
+| `sizes` | `{"M":2,"L":1}` | JSON string, size → quantity |
+| `total_quantity` | `3` | |
+| `print_position` | `Front & Back` | Front, Back, Front & Back |
+| `needs_design_help` | `yes` / `no` | |
+| `design_notes` | `Logo on front…` | Free text |
+| `delivery_method` | `Delivery` | `Abuja pickup` or `Delivery` |
+| `delivery_address` | | Filled when delivery |
+| `deadline` | `2026-12-01` | Optional date |
+| `customer_name` | | |
+| `customer_phone` | | WhatsApp number |
+| `customer_email` | | Optional |
+| `summary` | | Ready-made plain-text summary to forward on WhatsApp/email |
+| `design_file` | (file) | Optional upload, max 10 MB |
+
+### Suggested workflow
+
+Webhook → save the order (Google Sheets / Airtable) → save `design_file` (Google Drive) → notify the business on WhatsApp/Telegram/email with `summary` → send the customer a confirmation with their `order_id`.

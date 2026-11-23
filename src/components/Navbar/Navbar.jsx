@@ -85,7 +85,7 @@ const Navbar = ({ theme, setTheme, openPopup }) => {
           </button>
 
           <button className='ag-navbar__cta' onClick={openPopup}>
-            Get Quote ✦
+            Order Now ✦
           </button>
 
           <button
@@ -124,7 +124,7 @@ const Navbar = ({ theme, setTheme, openPopup }) => {
           className='ag-navbar__drawer-cta'
           onClick={() => { setDrawerOpen(false); openPopup() }}
         >
-          🚀 Get a Free Quote
+          👕 Start Your Order
         </button>
       </div>
     </>

@@ -32,9 +32,9 @@ const ContactUs = () => {
       {/* Header */}
       <div className='ag-contact__header'>
         <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
-          <span className='ag-contact__label'>Get In Touch</span>
-          <h2 className='ag-contact__title'>Start Your Order Today</h2>
-          <p className='ag-contact__sub'>Fill in the form or reach us directly on WhatsApp. We respond within the hour.</p>
+          <span className='ag-contact__label'>Questions?</span>
+          <h2 className='ag-contact__title'>Talk to Us</h2>
+          <p className='ag-contact__sub'>Ready to order? Use the order page. Questions about an order? Message us here or on WhatsApp.</p>
         </motion.div>
       </div>
 
@@ -91,21 +91,19 @@ const ContactUs = () => {
           </div>
 
           <div className='ag-contact__field'>
-            <label>Clothing Type</label>
+            <label>Topic</label>
             <select name='service'>
-              <option value=''>What do you want printed?</option>
-              <option>Custom T-Shirts</option>
-              <option>Branded Polo Shirts</option>
-              <option>Hoodies & Sweatshirts</option>
-              <option>Uniforms & Corporate Wear</option>
-              <option>Event & Campaign Shirts</option>
-              <option>Other Clothing</option>
+              <option value=''>What is it about?</option>
+              <option>Question before ordering</option>
+              <option>An existing order</option>
+              <option>Bulk / business order</option>
+              <option>Something else</option>
             </select>
           </div>
 
           <div className='ag-contact__field'>
-            <label>Order Details</label>
-            <textarea name='message' placeholder='Quantity, sizes, colours, your design idea and deadline…' required />
+            <label>Message</label>
+            <textarea name='message' placeholder='How can we help?' required />
           </div>
 
           <button type='submit' className='ag-contact__submit'>

@@ -59,8 +59,8 @@ const ServiceDetail = () => {
             <p className='ag-svc-detail__desc'>{svc.fullDescription}</p>
             <p className='ag-svc-detail__desc'>
               Whether you are a startup building from scratch, an established business looking to grow,
-              or an organisation planning an event — our {svc.title.toLowerCase()} service
-              puts your brand on clothing people are proud to wear.
+              or an organisation planning an event — print on demand means you order exactly
+              what you need, when you need it.
             </p>
           </motion.div>
           <motion.div
@@ -78,9 +78,9 @@ const ServiceDetail = () => {
               ))}
             </ul>
             <hr className='ag-svc-detail__includes-divider' />
-            <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-svc-detail__quote-btn'>
-              📱 Get a Quote Now
-            </a>
+            <Link to='/order' className='ag-svc-detail__quote-btn'>
+              👕 Start Your Order
+            </Link>
           </motion.div>
         </div>
 
@@ -121,11 +121,11 @@ const ServiceDetail = () => {
         <motion.div className='ag-svc-detail__cta'
           initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration:0.6 }}>
           <h2>Ready to Get Started?</h2>
-          <p>Tell us about your clothing order and we will respond within the hour with a clear plan and fair price.</p>
+          <p>Upload your design and place your order and we will respond within the hour with a clear plan and fair price.</p>
           <div className='ag-svc-detail__cta-btns'>
-            <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-svc-detail__cta-btn-wa'>
-              📱 WhatsApp Us Now
-            </a>
+            <Link to='/order' className='ag-svc-detail__cta-btn-wa'>
+              👕 Start Your Order
+            </Link>
             <Link to='/#contact-us' className='ag-svc-detail__cta-btn-msg'>📧 Send a Message</Link>
           </div>
         </motion.div>

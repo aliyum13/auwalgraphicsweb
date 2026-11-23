@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import './Cursor.css'
 
 import Navbar from './components/Navbar/Navbar'
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat'
-import QuotePopup from './components/QuotePopup/QuotePopup'
 import Hero from './components/Hero/Hero'
 import TrustBar from './components/TrustBar/Trustbar'
 import Services from './components/Services/Services'
@@ -20,6 +19,7 @@ import Footer from './components/Footer/Footer'
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail'
 import FounderPortfolio from './pages/FounderPortfolio/FounderPortfolio'
+import Order from './pages/Order/Order'
 
 const HomePage = ({ openPopup }) => (
   <>
@@ -44,8 +44,10 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   const [theme, setTheme]     = useState(localStorage.getItem('theme') || 'light')
-  const [popupOpen, setPopup] = useState(false)
   const { pathname }          = useLocation()
+  const navigate              = useNavigate()
+  // Every "Order" button opens the order page
+  const openOrder             = () => navigate('/order')
   const isFounderPage         = pathname === '/founder'
 
   // ── Custom cursor (fixed: using translate -50% -50% so the center aligns) ──
@@ -108,24 +110,24 @@ const AppContent = () => {
       <Toaster position='top-center' />
 
       {!isFounderPage && (
-        <Navbar theme={theme} setTheme={setTheme} openPopup={() => setPopup(true)} />
+        <Navbar theme={theme} setTheme={setTheme} openPopup={openOrder} />
       )}
 
       <ScrollToTop />
 
       <Routes>
-        <Route path='/'             element={<HomePage openPopup={() => setPopup(true)} />} />
+        <Route path='/'             element={<HomePage openPopup={openOrder} />} />
+        <Route path='/order'        element={<Order />} />
         <Route path='/services/:id' element={<ServiceDetail />} />
         <Route path='/portfolio/:id'element={<ProjectDetail />} />
         <Route path='/founder'      element={<FounderPortfolio />} />
       </Routes>
 
       {!isFounderPage && (
-        <Footer theme={theme} openPopup={() => setPopup(true)} />
+        <Footer theme={theme} openPopup={openOrder} />
       )}
 
-      <WhatsAppFloat />
-      <QuotePopup isOpen={popupOpen} onClose={() => setPopup(false)} />
+      <WhatsAppFloat openPopup={openOrder} />
 
       {/* ── CURSOR ELEMENTS ── */}
       {/* Using id="ag-cursor-dot/ring" which are styled in Cursor.css */}

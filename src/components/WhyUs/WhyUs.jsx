@@ -3,12 +3,12 @@ import { motion } from 'motion/react'
 import './WhyUs.css'
 
 const points = [
-  { icon:'✅', title:'Clean, Professional Prints',           desc:'Sharp, well-placed prints that make your team, event or brand look the part.' },
+  { icon:'📦', title:'No Minimum, No Stock',                 desc:'Order one piece or a hundred. We print only what you order, so nothing is wasted.' },
   { icon:'⚡', title:'Reliable & Fast Delivery',             desc:'Deadlines are sacred. We deliver quality work on time, every time — no excuses.' },
   { icon:'💰', title:'Affordable Premium Quality',           desc:'Quality clothing printing at fair Nigerian prices — maximum value for every naira.' },
   { icon:'🎨', title:'Artwork Included When You Need It',    desc:'No design yet? We prepare print-ready artwork and show you a mockup before printing.' },
-  { icon:'👕', title:'Any Quantity',                         desc:'From a single custom T-shirt to bulk orders for staff, events and campaigns.' },
-  { icon:'💬', title:'Fast Response & Communication',        desc:'WhatsApp-ready, responsive team. We keep you informed at every project stage.' },
+  { icon:'✅', title:'Clean, Professional Prints',           desc:'Sharp, well-placed prints that make your brand, team or event look the part.' },
+  { icon:'💬', title:'Order Updates on WhatsApp',            desc:'Every order is confirmed and tracked on WhatsApp, from design to delivery.' },
 ]
 
 const WhyUs = () => (
@@ -31,7 +31,7 @@ const WhyUs = () => (
           <div className='ag-whyus__logo-text'>
             <span className='blue-part'>Auwal</span>Graphics
           </div>
-          <p className='ag-whyus__logo-sub'>Clothing Printing · Abuja, Nigeria</p>
+          <p className='ag-whyus__logo-sub'>Print on Demand · Abuja, Nigeria</p>
         </div>
 
         {/* Tagline */}

@@ -10,10 +10,10 @@ const Services = () => (
   <section className='ag-services' id='services'>
     <div className='ag-services__header'>
       <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
-        <span className='ag-services__label'>What We Do</span>
-        <h2 className='ag-services__title'>Clothing Printing,<br />Done Properly</h2>
+        <span className='ag-services__label'>What You Can Order</span>
+        <h2 className='ag-services__title'>Print on Demand,<br />For Every Need</h2>
         <p className='ag-services__sub'>
-          We focus on one thing: printing on shirts and clothing. Here is what we can print for you.
+          Pick the clothing, send your design, and we print it only when you order.
         </p>
       </motion.div>
     </div>
@@ -31,8 +31,8 @@ const Services = () => (
           <div className='ag-services__icon'>{item.icon}</div>
           <h3 className='ag-services__card-title'>{item.title}</h3>
           <p className='ag-services__card-desc'>{item.description}</p>
-          <Link to={`/services/${svc.id}`} className='ag-services__learn'>
-            Learn More →
+          <Link to='/order' className='ag-services__learn'>
+            Order Now →
           </Link>
         </motion.div>
       ))}

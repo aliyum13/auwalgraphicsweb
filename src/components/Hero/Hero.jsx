@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'motion/react'
 import './Hero.css'
 
-const badges = ['Any Quantity', 'Premium Quality', 'Abuja Based', 'Nationwide Delivery']
+const badges = ['No Minimum Order', 'Printed When You Order', 'Abuja Based', 'Nationwide Delivery']
 
 const Hero = ({ openPopup }) => (
   <div className='ag-hero' id='hero'>
@@ -20,23 +20,23 @@ const Hero = ({ openPopup }) => (
       >
         <div className='ag-hero__eyebrow'>
           <span className='ag-hero__eyebrow-dot' />
-          🇳🇬 Clothing Printing in Abuja
+          🇳🇬 Print on Demand · Abuja
         </div>
 
         <h1 className='ag-hero__title'>
-          Custom Printed<br />
-          <span className='highlight'>Shirts & Clothing</span><br />
-          For Your Brand
+          Your Design.<br />
+          <span className='highlight'>Printed on Demand.</span><br />
+          Delivered to You.
         </h1>
 
         <p className='ag-hero__sub'>
-          T-shirts, polos, hoodies, uniforms and event wear — printed with your logo,
-          design or message. From 1 piece to bulk orders, delivered across Nigeria.
+          Upload your design, pick your shirt, and we print it when you order. T-shirts,
+          polos, hoodies and more — one piece or many, delivered across Nigeria.
         </p>
 
         <div className='ag-hero__btns'>
           <button className='ag-hero__btn-primary' onClick={openPopup}>
-            🚀 Get a Free Quote
+            👕 Start Your Order
           </button>
           <a className='ag-hero__btn-outline' href='/#portfolio'>
             See Our Work →
@@ -45,7 +45,7 @@ const Hero = ({ openPopup }) => (
 
         <p className='ag-hero__trust'>
           <span className='ag-hero__trust-check'>✓</span>
-          Trusted by businesses, events & teams across Nigeria
+          No stock, no minimum — every piece printed just for you
         </p>
       </motion.div>
 

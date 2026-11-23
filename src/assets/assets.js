@@ -6,12 +6,12 @@ import founderPhoto from './founder image.jpeg'
 export const servicesData = [
   {
     id: 'clothing-printing',
-    title: 'Clothing Printing',
-    tagline: 'Custom Printed Shirts & Clothing That Carry Your Brand',
+    title: 'Print on Demand Clothing',
+    tagline: 'Your Design, Printed When You Order — No Minimum, No Stock',
     icon: '👕',
     heroImage: '/bms-hero.png',
-    description: 'Custom T-shirts, polos, hoodies, uniforms and event wear — printed with your logo, design or message, in any quantity.',
-    fullDescription: 'Auwal Graphics specialises in printing on shirts and clothing. Whether you need one custom T-shirt or hundreds of branded polos for your team, event or campaign, we handle the artwork, printing and delivery so your clothing looks sharp and represents your brand well.',
+    description: 'Custom T-shirts, polos, hoodies and more — printed on demand with your design, one piece or many.',
+    fullDescription: 'Auwal Graphics is a print on demand clothing business. Nothing sits in a warehouse: you choose the clothing, send your design, and we print it only after you order. Order a single custom T-shirt or a full batch for your brand, team or event, and we deliver it to you anywhere in Nigeria.',
     includes: [
       'Custom T-Shirts',
       'Branded Polo Shirts',
@@ -20,20 +20,20 @@ export const servicesData = [
       'Event, Church & Mosque Shirts',
       'Campaign & Political Shirts',
       'School, Club & Team Wear',
-      'Print-Ready Artwork for Your Clothing',
+      'Design Help If You Don\'t Have Artwork',
     ],
     products: [
-      { icon: '👕', title: 'Custom T-Shirts', description: 'Your logo, design or message printed on quality T-shirts — from a single piece to bulk orders.' },
+      { icon: '👕', title: 'Custom T-Shirts', description: 'Your design on a quality T-shirt, printed when you order — even just one.' },
       { icon: '🎽', title: 'Branded Polo Shirts', description: 'Professional branded polos for staff, teams and corporate events.' },
       { icon: '🧥', title: 'Hoodies & Sweatshirts', description: 'Printed hoodies and sweatshirts for brands, schools, clubs and crews.' },
       { icon: '👔', title: 'Uniforms & Corporate Wear', description: 'Consistent branded clothing that makes your team look organised and professional.' },
       { icon: '🎉', title: 'Event & Campaign Shirts', description: 'Shirts for weddings, conferences, religious events, launches and campaigns.' },
-      { icon: '🎨', title: 'Artwork for Print', description: 'No design yet? We create or prepare your artwork so it prints clean on fabric.' },
+      { icon: '🛍️', title: 'Sell Your Own Merch', description: 'Creators and brands: drop your designs and order only what you\'ve sold — no stock to hold.' },
     ],
     process: [
-      { step: '01', title: 'Tell Us Your Order', desc: 'Share the clothing type, quantity, sizes, colours and your design or idea.' },
-      { step: '02', title: 'Design & Mockup', desc: 'You supply artwork or we design it, then we show you a mockup for approval.' },
-      { step: '03', title: 'Printing', desc: 'Once approved and paid, your clothing goes into production.' },
+      { step: '01', title: 'Place Your Order', desc: 'Choose the clothing, colour, sizes and upload your design on our order page.' },
+      { step: '02', title: 'Confirm & Pay', desc: 'We confirm your order and price on WhatsApp, send a mockup if needed, and you pay.' },
+      { step: '03', title: 'Printed on Demand', desc: 'Your clothing is printed only for your order — nothing pre-made.' },
       { step: '04', title: 'Delivery', desc: 'Abuja pickup or delivery to you anywhere in Nigeria.' },
     ],
     gallery: [
@@ -86,24 +86,28 @@ export const testimonialsData = [
 
 export const faqData = [
   {
-    q: 'What types of clothing can you print on?',
-    a: 'We print on T-shirts, polo shirts, hoodies, sweatshirts, uniforms and other clothing. Tell us what you have in mind and we will advise on the best option.',
+    q: 'What does print on demand mean?',
+    a: 'We don\'t keep ready-made stock. Every piece is printed only after you order it, with your design. That means no minimum order and nothing wasted.',
   },
   {
-    q: 'Can I print small quantities?',
-    a: 'Yes! We accommodate small and large orders. You can order as few as 1 T-shirt or print for your whole team, event or campaign.',
+    q: 'Can I order just one shirt?',
+    a: 'Yes! You can order a single custom T-shirt or a full batch for your team, event or brand.',
+  },
+  {
+    q: 'How do I order?',
+    a: 'Go to the order page, pick the clothing, colour and sizes, upload your design and send. We confirm your order and price on WhatsApp before printing.',
   },
   {
     q: 'I don\'t have a design. Can you help?',
-    a: 'Yes. Share your logo or idea and we will create print-ready artwork and send you a mockup to approve before anything is printed.',
+    a: 'Yes. Tick "I need design help" on the order form, describe your idea, and we will prepare the artwork and send you a mockup to approve.',
   },
   {
     q: 'How long does an order take?',
-    a: 'Most clothing orders are ready within 2 – 7 days depending on quantity. Message us if you have an urgent deadline.',
+    a: 'Most orders are printed and ready within 2 – 7 days depending on quantity. Add your deadline on the order form if it is urgent.',
   },
   {
     q: 'Do you deliver outside Abuja?',
-    a: 'Absolutely! We deliver printed clothing nationwide across Nigeria, or you can pick up in Abuja.',
+    a: 'Absolutely! We deliver across Nigeria, or you can pick up in Abuja.',
   },
 ]
 

@@ -32,7 +32,7 @@ const WhatsAppFloat = ({ openPopup }) => (
           className='ag-wa-float__mobile-quote'
           onClick={openPopup}
         >
-          🚀 Get Quote
+          👕 Order Now
         </button>
       </div>
     </div>

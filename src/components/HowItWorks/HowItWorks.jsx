@@ -3,8 +3,8 @@ import { motion } from 'motion/react'
 import './HowItWorks.css'
 
 const steps = [
-  { icon:'💬', num:'Step 01', title:'Tell Us What You Need',  desc:'Contact us via WhatsApp, phone, or quote form. Tell us the clothing type, quantity, sizes and your design. We respond fast with a clear price.' },
-  { icon:'🎨', num:'Step 02', title:'Approve & We Print',     desc:'We send you a mockup of your design on the clothing. Once you approve, your order goes into printing.' },
+  { icon:'🛒', num:'Step 01', title:'Place Your Order',       desc:'Use our order page to pick the clothing, colour and sizes, and upload your design. No design? Tell us your idea.' },
+  { icon:'🖨️', num:'Step 02', title:'Confirm & We Print',     desc:'We confirm your order and price on WhatsApp. Once you pay, your clothing is printed on demand, just for you.' },
   { icon:'🚚', num:'Step 03', title:'You Receive & Wear',     desc:'Pick up in Abuja or get delivery anywhere in Nigeria. Your team, event or customers wear your brand with pride.' },
 ]
 
@@ -14,7 +14,7 @@ const HowItWorks = () => (
       <motion.div initial={{ opacity:0,y:30 }} whileInView={{ opacity:1,y:0 }} transition={{ duration:0.6 }} viewport={{ once:true }}>
         <span className='ag-how__label'>Our Process</span>
         <h2 className='ag-how__title'>Simple Process. Serious Results.</h2>
-        <p className='ag-how__sub'>Three steps from idea to printed clothing in your hands.</p>
+        <p className='ag-how__sub'>Three steps from your design to clothing in your hands.</p>
       </motion.div>
     </div>
 

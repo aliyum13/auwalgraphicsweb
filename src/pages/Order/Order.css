@@ -1,0 +1,137 @@
+/* Order.css — print on demand order page */
+.ag-order {
+  min-height: 100vh;
+  padding: 120px 5% 100px;
+  background: #f8f9ff;
+  font-family: 'Poppins', sans-serif;
+}
+.dark .ag-order { background: #0a0a14; }
+
+.ag-order__header { text-align: center; max-width: 620px; margin: 0 auto 40px; }
+.ag-order__label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em;
+  color: #2c459d; background: rgba(44,69,157,0.08);
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;
+}
+.ag-order__title {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: #000;
+  letter-spacing: -0.02em; margin-bottom: 12px;
+}
+.dark .ag-order__title { color: #fff; }
+.ag-order__sub { font-size: 15px; color: #666; line-height: 1.7; }
+.dark .ag-order__sub { color: #999; }
+
+.ag-order__form { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+.ag-order__card {
+  background: #fff; border: 1.5px solid #e8e8f0; border-radius: 20px; padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.dark .ag-order__card { background: #151620; border-color: #1e2030; }
+.ag-order__card h2 {
+  font-size: 17px; font-weight: 800; color: #000; display: flex; align-items: center; gap: 10px;
+}
+.dark .ag-order__card h2 { color: #fff; }
+.ag-order__card h2 span {
+  width: 28px; height: 28px; border-radius: 50%; background: #2c459d; color: #fff;
+  font-size: 13px; display: inline-flex; align-items: center; justify-content: center;
+}
+
+.ag-order__field-label { font-size: 13px; font-weight: 600; color: #444; display: block; margin-bottom: 6px; }
+.dark .ag-order__field-label { color: #bbb; }
+
+.ag-order__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ag-order__chip {
+  padding: 9px 16px; border-radius: 100px; border: 1.5px solid #dde0ee; background: #fff;
+  font-size: 13.5px; font-weight: 600; color: #333; cursor: pointer; font-family: inherit;
+  transition: all .15s;
+}
+.ag-order__chip:hover { border-color: #2c459d; color: #2c459d; }
+.ag-order__chip.active { background: #2c459d; border-color: #2c459d; color: #fff; }
+.dark .ag-order__chip { background: #0f1018; border-color: #2a2c3d; color: #ddd; }
+.dark .ag-order__chip.active { background: #2c459d; border-color: #2c459d; color: #fff; }
+
+.ag-order__input {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1.5px solid #dde0ee;
+  font-size: 14px; font-family: inherit; background: #fff; color: #111; outline: none;
+  box-sizing: border-box; resize: vertical;
+}
+.ag-order__input:focus { border-color: #2c459d; }
+.dark .ag-order__input { background: #0f1018; border-color: #2a2c3d; color: #eee; }
+
+.ag-order__sizes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.ag-order__size {
+  border: 1.5px solid #e8e8f0; border-radius: 14px; padding: 10px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dark .ag-order__size { border-color: #2a2c3d; }
+.ag-order__size-name { font-weight: 800; color: #111; font-size: 14px; }
+.dark .ag-order__size-name { color: #fff; }
+.ag-order__stepper { display: flex; align-items: center; gap: 10px; }
+.ag-order__stepper button {
+  width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid #dde0ee; background: #fff;
+  font-size: 16px; font-weight: 700; color: #2c459d; cursor: pointer; line-height: 1;
+}
+.dark .ag-order__stepper button { background: #0f1018; border-color: #2a2c3d; }
+.ag-order__stepper span { min-width: 18px; text-align: center; font-weight: 700; color: #111; }
+.dark .ag-order__stepper span { color: #fff; }
+.ag-order__total { font-size: 14px; color: #555; }
+.dark .ag-order__total { color: #aaa; }
+
+.ag-order__upload {
+  display: flex; align-items: center; gap: 12px; padding: 18px; border-radius: 14px;
+  border: 2px dashed #c5cbe6; cursor: pointer; font-size: 14px; color: #444; background: #f8f9ff;
+  word-break: break-all;
+}
+.ag-order__upload:hover { border-color: #2c459d; }
+.ag-order__upload input { display: none; }
+.ag-order__upload-icon { font-size: 22px; }
+.dark .ag-order__upload { background: #0f1018; border-color: #2a2c3d; color: #ccc; }
+
+.ag-order__check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #333; cursor: pointer; }
+.dark .ag-order__check { color: #ccc; }
+.ag-order__check input { width: 18px; height: 18px; accent-color: #2c459d; }
+
+.ag-order__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.ag-order__submit {
+  padding: 16px; border-radius: 14px; border: none; background: #2c459d; color: #fff;
+  font-size: 16px; font-weight: 800; cursor: pointer; font-family: inherit;
+  box-shadow: 0 10px 30px rgba(44,69,157,0.3);
+}
+.ag-order__submit:hover { background: #1e3080; }
+.ag-order__submit:disabled { opacity: .6; cursor: wait; }
+.ag-order__note { text-align: center; font-size: 13px; color: #777; }
+.ag-order__note a { color: #2c459d; font-weight: 600; }
+
+/* Done state */
+.ag-order__done {
+  max-width: 520px; margin: 40px auto 0; text-align: center; background: #fff;
+  border: 1.5px solid #e8e8f0; border-radius: 24px; padding: 40px 28px;
+}
+.dark .ag-order__done { background: #151620; border-color: #1e2030; }
+.ag-order__done-icon { font-size: 44px; margin-bottom: 8px; }
+.ag-order__done h1 { font-size: 28px; font-weight: 900; color: #000; margin-bottom: 8px; }
+.dark .ag-order__done h1 { color: #fff; }
+.ag-order__done p { color: #666; font-size: 14.5px; line-height: 1.7; }
+.dark .ag-order__done p { color: #aaa; }
+.ag-order__done-id {
+  display: inline-block; margin: 8px 0 16px; padding: 10px 20px; border-radius: 12px;
+  background: rgba(44,69,157,0.08); color: #2c459d; font-weight: 800; font-size: 20px; letter-spacing: .05em;
+}
+.ag-order__done-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
+.ag-order__btn-primary {
+  padding: 14px; border-radius: 12px; background: #25D366; color: #fff; font-weight: 700; text-decoration: none;
+}
+.ag-order__btn-ghost {
+  padding: 14px; border-radius: 12px; border: 1.5px solid #dde0ee; background: transparent;
+  color: #2c459d; font-weight: 700; cursor: pointer; font-family: inherit;
+}
+
+@media (max-width: 640px) {
+  .ag-order { padding: 100px 16px 120px; }
+  .ag-order__card { padding: 20px; }
+  .ag-order__sizes { grid-template-columns: repeat(2, 1fr); }
+  .ag-order__row { grid-template-columns: 1fr; }
+}

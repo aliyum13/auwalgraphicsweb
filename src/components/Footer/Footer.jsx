@@ -35,9 +35,9 @@ const Footer = ({ openPopup }) => (
         </Link>
 
         <p className='ag-footer__bio'>
-          <strong style={{ color: '#fff' }}>Auwal Graphics</strong> prints custom T-shirts, polos, hoodies,
-          uniforms and event wear for businesses, teams and events — based in Abuja,
-          delivering across Nigeria.
+          <strong style={{ color: '#fff' }}>Auwal Graphics</strong> is a print on demand clothing business —
+          your design on T-shirts, polos, hoodies and more, printed when you order and
+          delivered across Nigeria.
         </p>
 
         <div className='ag-footer__socials'>
@@ -76,13 +76,12 @@ const Footer = ({ openPopup }) => (
 
       {/* ── SERVICES ── */}
       <div className='ag-footer__col'>
-        <h2>What We Print</h2>
+        <h2>Order</h2>
         <ul>
-          <li><Link to='/services/clothing-printing'>Custom T-Shirts</Link></li>
-          <li><Link to='/services/clothing-printing'>Branded Polo Shirts</Link></li>
-          <li><Link to='/services/clothing-printing'>Hoodies & Sweatshirts</Link></li>
-          <li><Link to='/services/clothing-printing'>Uniforms & Corporate Wear</Link></li>
-          <li><Link to='/services/clothing-printing'>Event & Campaign Shirts</Link></li>
+          <li><Link to='/order'>Start an Order</Link></li>
+          <li><Link to='/services/clothing-printing'>How Print on Demand Works</Link></li>
+          <li><a href='/#services'>What You Can Order</a></li>
+          <li><a href='/#faq'>FAQ</a></li>
         </ul>
       </div>
 
@@ -103,7 +102,7 @@ const Footer = ({ openPopup }) => (
           <li>
             <button onClick={openPopup}
               style={{ background:'none', border:'none', color:'#888', fontSize:'13.5px', cursor:'pointer', padding:0, fontFamily:'Poppins,sans-serif' }}>
-              Get a Quote
+              Order Now
             </button>
           </li>
         </ul>
