@@ -53,8 +53,8 @@ If the variable is not set, or the webhook fails, the form opens WhatsApp with t
 | `print_position` | `Front & Back` | Front, Back, Front & Back |
 | `needs_design_help` | `yes` / `no` | |
 | `design_notes` | `Logo on front…` | Free text |
-| `delivery_method` | `Delivery` | `Abuja pickup` or `Delivery` |
-| `delivery_address` | | Filled when delivery |
+| `delivery_method` | `Delivery within Abuja` | Always this for now (Abuja only) |
+| `delivery_address` | | Required; address in Abuja |
 | `deadline` | `2026-12-01` | Optional date |
 | `customer_name` | | |
 | `customer_phone` | | WhatsApp number |

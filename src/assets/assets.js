@@ -11,7 +11,7 @@ export const servicesData = [
     icon: '👕',
     heroImage: '/bms-hero.png',
     description: 'Custom T-shirts, polos, hoodies and more — printed on demand with your design, one piece or many.',
-    fullDescription: 'Auwal Graphics is a print on demand clothing business. Nothing sits in a warehouse: you choose the clothing, send your design, and we print it only after you order. Order a single custom T-shirt or a full batch for your brand, team or event, and we deliver it to you anywhere in Nigeria.',
+    fullDescription: 'Auwal Graphics is a print on demand clothing business. Nothing sits in a warehouse: you choose the clothing, send your design, and we print it only after you order. Order a single custom T-shirt or a full batch for your brand, team or event, and we deliver it to you anywhere in Abuja.',
     includes: [
       'Custom T-Shirts',
       'Branded Polo Shirts',
@@ -34,7 +34,7 @@ export const servicesData = [
       { step: '01', title: 'Place Your Order', desc: 'Choose the clothing, colour, sizes and upload your design on our order page.' },
       { step: '02', title: 'Confirm & Pay', desc: 'We confirm your order and price on WhatsApp, send a mockup if needed, and you pay.' },
       { step: '03', title: 'Printed on Demand', desc: 'Your clothing is printed only for your order — nothing pre-made.' },
-      { step: '04', title: 'Delivery', desc: 'Abuja pickup or delivery to you anywhere in Nigeria.' },
+      { step: '04', title: 'Delivery', desc: 'Delivered to your address within Abuja.' },
     ],
     gallery: [
       '/bms-1.png',
@@ -103,11 +103,11 @@ export const faqData = [
   },
   {
     q: 'How long does an order take?',
-    a: 'Most orders are printed and ready within 2 – 7 days depending on quantity. Add your deadline on the order form if it is urgent.',
+    a: 'Most orders are printed and delivered within 2 – 7 days depending on quantity. Add your deadline on the order form if it is urgent.',
   },
   {
-    q: 'Do you deliver outside Abuja?',
-    a: 'Absolutely! We deliver across Nigeria, or you can pick up in Abuja.',
+    q: 'Where do you deliver?',
+    a: 'We currently deliver within Abuja (FCT). We are adding print partners in more states, and will announce new locations as we expand.',
   },
 ]
 

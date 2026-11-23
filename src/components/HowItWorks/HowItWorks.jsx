@@ -5,7 +5,7 @@ import './HowItWorks.css'
 const steps = [
   { icon:'🛒', num:'Step 01', title:'Place Your Order',       desc:'Use our order page to pick the clothing, colour and sizes, and upload your design. No design? Tell us your idea.' },
   { icon:'🖨️', num:'Step 02', title:'Confirm & We Print',     desc:'We confirm your order and price on WhatsApp. Once you pay, your clothing is printed on demand, just for you.' },
-  { icon:'🚚', num:'Step 03', title:'You Receive & Wear',     desc:'Pick up in Abuja or get delivery anywhere in Nigeria. Your team, event or customers wear your brand with pride.' },
+  { icon:'🚚', num:'Step 03', title:'You Receive & Wear',     desc:'We deliver to your address within Abuja. Your team, event or customers wear your brand with pride.' },
 ]
 
 const HowItWorks = () => (

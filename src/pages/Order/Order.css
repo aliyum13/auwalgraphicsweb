@@ -76,6 +76,9 @@
 .dark .ag-order__stepper button { background: #0f1018; border-color: #2a2c3d; }
 .ag-order__stepper span { min-width: 18px; text-align: center; font-weight: 700; color: #111; }
 .dark .ag-order__stepper span { color: #fff; }
+.ag-order__hint { font-size: 13.5px; color: #2c459d; background: rgba(44,69,157,0.07); padding: 10px 14px; border-radius: 10px; }
+.dark .ag-order__hint { color: #9fb0ef; }
+
 .ag-order__total { font-size: 14px; color: #555; }
 .dark .ag-order__total { color: #aaa; }
 

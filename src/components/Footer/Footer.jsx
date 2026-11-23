@@ -37,7 +37,7 @@ const Footer = ({ openPopup }) => (
         <p className='ag-footer__bio'>
           <strong style={{ color: '#fff' }}>Auwal Graphics</strong> is a print on demand clothing business —
           your design on T-shirts, polos, hoodies and more, printed when you order and
-          delivered across Nigeria.
+          delivered within Abuja.
         </p>
 
         <div className='ag-footer__socials'>

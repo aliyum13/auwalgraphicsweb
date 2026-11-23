@@ -6,7 +6,7 @@ const items = [
   { num: '100+', label: 'Happy Clients' },
   { icon: '🏙️',  label: 'Abuja Based' },
   { icon: '⚡',   label: 'Fast Turnaround' },
-  { icon: '🚚',   label: 'Nationwide Delivery' },
+  { icon: '🚚',   label: 'Delivery Across Abuja' },
   { num: '5★',   label: 'Client Rating' },
   { icon: '🇳🇬',  label: "Nigeria's Best" },
 ]

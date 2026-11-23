@@ -34,7 +34,6 @@ const Order = () => {
   const [position, setPosition] = useState(POSITIONS[0])
   const [file, setFile]         = useState(null)
   const [needsDesign, setNeeds] = useState(false)
-  const [delivery, setDelivery] = useState('Abuja pickup')
   const [sending, setSending]   = useState(false)
   const [doneId, setDoneId]     = useState(null)
 
@@ -66,7 +65,7 @@ const Order = () => {
       `Print: ${position}`,
       `Design: ${file ? `${file.name}${viaWhatsApp ? ' (sending in chat)' : ' (attached)'}` : 'none uploaded'}${needsDesign ? ' - needs design help' : ''}`,
       f.get('design_notes') ? `Notes: ${f.get('design_notes')}` : null,
-      `Delivery: ${delivery}${f.get('address') ? ` - ${f.get('address')}` : ''}`,
+      `Delivery (Abuja): ${f.get('address')}`,
       f.get('deadline') ? `Needed by: ${f.get('deadline')}` : null,
       `Name: ${f.get('name')}`,
       `Phone: ${f.get('phone')}`,
@@ -103,7 +102,7 @@ const Order = () => {
     payload.append('print_position', position)
     payload.append('needs_design_help', needsDesign ? 'yes' : 'no')
     payload.append('design_notes', form.get('design_notes') || '')
-    payload.append('delivery_method', delivery)
+    payload.append('delivery_method', 'Delivery within Abuja')
     payload.append('delivery_address', form.get('address') || '')
     payload.append('deadline', form.get('deadline') || '')
     payload.append('customer_name', form.get('name') || '')
@@ -235,14 +234,9 @@ const Order = () => {
         {/* 4. Delivery & contact */}
         <section className='ag-order__card'>
           <h2><span>4</span> Delivery & contact</h2>
-          <div className='ag-order__chips'>
-            {['Abuja pickup', 'Delivery'].map(d => (
-              <button type='button' key={d} className={`ag-order__chip${delivery === d ? ' active' : ''}`} onClick={() => setDelivery(d)}>{d}</button>
-            ))}
-          </div>
-          {delivery === 'Delivery' && (
-            <textarea name='address' className='ag-order__input' rows={2} placeholder='Delivery address (street, area, city, state)' required />
-          )}
+          <p className='ag-order__hint'>📍 We currently deliver within Abuja (FCT) only. More locations coming soon.</p>
+          <label className='ag-order__field-label'>Delivery address in Abuja</label>
+          <textarea name='address' className='ag-order__input' rows={2} placeholder='Street, area (e.g. Wuse 2, Gwarinpa, Kubwa)' required />
 
           <div className='ag-order__row'>
             <div>

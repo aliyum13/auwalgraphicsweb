@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'motion/react'
 import './Hero.css'
 
-const badges = ['No Minimum Order', 'Printed When You Order', 'Abuja Based', 'Nationwide Delivery']
+const badges = ['No Minimum Order', 'Printed When You Order', 'Abuja Based', 'Delivery Across Abuja']
 
 const Hero = ({ openPopup }) => (
   <div className='ag-hero' id='hero'>
@@ -31,7 +31,7 @@ const Hero = ({ openPopup }) => (
 
         <p className='ag-hero__sub'>
           Upload your design, pick your shirt, and we print it when you order. T-shirts,
-          polos, hoodies and more — one piece or many, delivered across Nigeria.
+          polos, hoodies and more — one piece or many, delivered within Abuja.
         </p>
 
         <div className='ag-hero__btns'>

@@ -15,7 +15,7 @@ const CTABanner = ({ openPopup }) => (
       <h2 className='ag-cta__title'>Got a Design? Let's Print It.</h2>
       <p className='ag-cta__sub'>
         Print on demand T-shirts, polos and hoodies — no minimum order,
-        printed when you order, delivered across Nigeria.
+        printed when you order, delivered within Abuja.
       </p>
       <div className='ag-cta__btns'>
         <button onClick={openPopup} className='ag-cta__btn-wa' style={{ border:'none', cursor:'pointer', fontFamily:'inherit' }}>
