@@ -26,6 +26,8 @@ The order page (`/order`, `src/pages/Order/Order.jsx`) sends every order to an n
 
 ### 2. Tell the website the webhook URL
 
+The live workflow is **Auwal Graphics - Website Orders** (`https://muhammadauwal.app.n8n.cloud/webhook/auwal-orders`). It is the built-in default in `Order.jsx`, so no setting is needed. To point the site elsewhere:
+
 Set this environment variable on Render (Environment tab), then redeploy:
 
 ```

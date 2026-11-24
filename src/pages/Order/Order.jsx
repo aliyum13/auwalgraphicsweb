@@ -5,11 +5,11 @@ import toast from 'react-hot-toast'
 import './Order.css'
 
 // ── n8n ──────────────────────────────────────────────────────────
-// Set VITE_N8N_ORDER_WEBHOOK (Render → Environment) to your n8n
-// Webhook node's production URL. Orders are POSTed there as
+// n8n workflow "Auwal Graphics - Website Orders" (production webhook).
+// VITE_N8N_ORDER_WEBHOOK on Render overrides it if set. Orders are POSTed there as
 // multipart/form-data (see README → "Order automation with n8n").
 // If it's not set, or the request fails, the order opens in WhatsApp.
-const N8N_WEBHOOK = import.meta.env.VITE_N8N_ORDER_WEBHOOK || ''
+const N8N_WEBHOOK = import.meta.env.VITE_N8N_ORDER_WEBHOOK || 'https://muhammadauwal.app.n8n.cloud/webhook/auwal-orders'
 const WHATSAPP    = '2349056314212'
 
 const PRODUCTS  = ['T-Shirt', 'Polo Shirt', 'Hoodie', 'Sweatshirt', 'Long-Sleeve T-Shirt', 'Cap', 'Other']
