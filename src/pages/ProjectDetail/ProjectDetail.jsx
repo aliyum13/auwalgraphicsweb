@@ -150,7 +150,7 @@ const ProjectDetail = () => {
           </p>
           <div className='flex flex-col sm:flex-row gap-3 justify-center'>
             <a
-              href='https://wa.me/2349067816736'
+              href='https://wa.me/2349056314212'
               target='_blank'
               rel='noreferrer'
               className='inline-flex items-center justify-center gap-2 bg-[#2c459d] text-white font-bold px-8 py-3.5 rounded-full text-sm hover:bg-[#1e3080] transition-all'

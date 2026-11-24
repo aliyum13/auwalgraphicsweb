@@ -7,7 +7,7 @@ const WhatsAppFloat = ({ openPopup }) => (
     <div className='ag-wa-float'>
       <div className='ag-wa-float__tooltip'>Chat on WhatsApp 💬</div>
       <a
-        href='https://wa.me/2349067816736'
+        href='https://wa.me/2349056314212'
         target='_blank'
         rel='noopener noreferrer'
         className='ag-wa-float__btn'
@@ -21,7 +21,7 @@ const WhatsAppFloat = ({ openPopup }) => (
     <div className='ag-wa-float__mobile-bar'>
       <div className='ag-wa-float__mobile-inner'>
         <a
-          href='https://wa.me/2349067816736'
+          href='https://wa.me/2349056314212'
           target='_blank'
           rel='noopener noreferrer'
           className='ag-wa-float__mobile-wa'

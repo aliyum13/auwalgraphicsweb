@@ -6,7 +6,7 @@ import './ContactUs.css'
 const WEB3_KEY = 'a5c57803-af0f-4f3f-8ce2-3ec02d41b2ac'  // ← paste your key here
 
 const contactItems = [
-  { icon:'📱', key:'WhatsApp',  val:'+234 906 781 6736',               href:'https://wa.me/2349067816736' },
+  { icon:'📱', key:'WhatsApp',  val:'+234 905 631 4212',               href:'https://wa.me/2349056314212' },
   { icon:'📞', key:'Phone',     val:'+234 901 590 6190',               href:'tel:+2349015906190' },
   { icon:'✉️', key:'Email',     val:'auwalgraphicsinfo@gmail.com',      href:'mailto:auwalgraphicsinfo@gmail.com' },
   { icon:'📍', key:'Address',   val:'Wuse Zone 4, Fabdal Plaza Suite 211, Abuja', href:null },
@@ -60,7 +60,7 @@ const ContactUs = () => {
               </div>
             </div>
           ))}
-          <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-contact__wa-btn'>
+          <a href='https://wa.me/2349056314212' target='_blank' rel='noreferrer' className='ag-contact__wa-btn'>
             📱 Chat With Us on WhatsApp
           </a>
         </motion.div>

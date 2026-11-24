@@ -74,8 +74,14 @@
   font-size: 16px; font-weight: 700; color: #2c459d; cursor: pointer; line-height: 1;
 }
 .dark .ag-order__stepper button { background: #0f1018; border-color: #2a2c3d; }
-.ag-order__stepper span { min-width: 18px; text-align: center; font-weight: 700; color: #111; }
-.dark .ag-order__stepper span { color: #fff; }
+.ag-order__stepper input {
+  width: 56px; padding: 4px 2px; text-align: center; font-weight: 700; font-size: 14px; color: #111;
+  border: 1.5px solid #dde0ee; border-radius: 8px; background: #fff; font-family: inherit; -moz-appearance: textfield;
+}
+.ag-order__stepper input::-webkit-outer-spin-button,
+.ag-order__stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.ag-order__stepper input:focus { outline: none; border-color: #2c459d; }
+.dark .ag-order__stepper input { background: #0f1018; border-color: #2a2c3d; color: #fff; }
 .ag-order__hint { font-size: 13.5px; color: #2c459d; background: rgba(44,69,157,0.07); padding: 10px 14px; border-radius: 10px; }
 .dark .ag-order__hint { color: #9fb0ef; }
 

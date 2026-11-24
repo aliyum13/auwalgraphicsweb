@@ -88,7 +88,7 @@ const ProjectDetail = () => {
           <h2>Want Results Like This?</h2>
           <p>Let us work on your project and deliver results that move your business forward. Contact us today for a free quote.</p>
           <div className='ag-proj__cta-btns'>
-            <a href='https://wa.me/2349067816736' target='_blank' rel='noreferrer' className='ag-proj__cta-btn-primary'>
+            <a href='https://wa.me/2349056314212' target='_blank' rel='noreferrer' className='ag-proj__cta-btn-primary'>
               📱 Start Your Project
             </a>
             <Link to='/' className='ag-proj__cta-btn-ghost'>View More Work →</Link>

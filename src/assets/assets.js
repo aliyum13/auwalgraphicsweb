@@ -167,7 +167,7 @@ export const founderData = {
 
 export const contactInfo = {
   phone: '+234 901 590 6190',
-  whatsapp: '+234 906 781 6736',
+  whatsapp: '+234 905 631 4212',
   email: 'auwalgraphicsinfo@gmail.com',
   address: 'wuse zone 4 fabdal plaza, suite: 211 Nigeria',
   socials: {

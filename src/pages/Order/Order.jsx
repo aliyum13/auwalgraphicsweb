@@ -10,13 +10,16 @@ import './Order.css'
 // multipart/form-data (see README → "Order automation with n8n").
 // If it's not set, or the request fails, the order opens in WhatsApp.
 const N8N_WEBHOOK = import.meta.env.VITE_N8N_ORDER_WEBHOOK || ''
-const WHATSAPP    = '2349067816736'
+const WHATSAPP    = '2349056314212'
 
-const PRODUCTS  = ['T-Shirt', 'Polo Shirt', 'Hoodie', 'Sweatshirt', 'Long-Sleeve T-Shirt', 'Other']
+const PRODUCTS  = ['T-Shirt', 'Polo Shirt', 'Hoodie', 'Sweatshirt', 'Long-Sleeve T-Shirt', 'Cap', 'Other']
 const COLOURS   = ['White', 'Black', 'Navy', 'Grey', 'Red', 'Other']
 const SIZES     = ['S', 'M', 'L', 'XL', 'XXL', '3XL']
-const POSITIONS = ['Front', 'Back', 'Front & Back']
+const CAP_SIZES = ['One size']
+const POSITIONS     = ['Front', 'Back', 'Front & Back']
+const CAP_POSITIONS = ['Front', 'Front & Back', 'Front, Side & Back']
 const MAX_FILE_MB = 10
+const MAX_FILES   = 5
 
 const makeOrderId = () => {
   const d = new Date()
@@ -25,14 +28,14 @@ const makeOrderId = () => {
   return `AG-${ymd}-${rand}`
 }
 
-const emptySizes = Object.fromEntries(SIZES.map(s => [s, 0]))
+const emptySizes = Object.fromEntries([...SIZES, ...CAP_SIZES].map(s => [s, 0]))
 
 const Order = () => {
   const [product, setProduct]   = useState(PRODUCTS[0])
   const [colour, setColour]     = useState(COLOURS[0])
   const [sizes, setSizes]       = useState(emptySizes)
   const [position, setPosition] = useState(POSITIONS[0])
-  const [file, setFile]         = useState(null)
+  const [files, setFiles]       = useState([])
   const [needsDesign, setNeeds] = useState(false)
   const [sending, setSending]   = useState(false)
   const [doneId, setDoneId]     = useState(null)
@@ -40,30 +43,47 @@ const Order = () => {
   // Show the confirmation (with the order number) from the top
   useEffect(() => { if (doneId) window.scrollTo({ top: 0, behavior: 'smooth' }) }, [doneId])
 
-  const totalQty = useMemo(() => Object.values(sizes).reduce((a, b) => a + b, 0), [sizes])
+  const isCap     = product === 'Cap'
+  const sizeList  = isCap ? CAP_SIZES : SIZES
+  const positions = isCap ? CAP_POSITIONS : POSITIONS
+
+  const totalQty = useMemo(() => sizeList.reduce((a, s) => a + (sizes[s] || 0), 0), [sizes, sizeList])
 
   const changeSize = (s, delta) =>
     setSizes(prev => ({ ...prev, [s]: Math.max(0, (prev[s] || 0) + delta) }))
+  const setSizeQty = (s, value) => {
+    const n = parseInt(value, 10)
+    setSizes(prev => ({ ...prev, [s]: Number.isFinite(n) && n > 0 ? Math.min(n, 100000) : 0 }))
+  }
+
+  const chooseProduct = (p) => {
+    setProduct(p)
+    const nextPositions = p === 'Cap' ? CAP_POSITIONS : POSITIONS
+    if (!nextPositions.includes(position)) setPosition(nextPositions[0])
+  }
 
   const onFile = (e) => {
-    const f = e.target.files?.[0]
-    if (f && f.size > MAX_FILE_MB * 1024 * 1024) {
-      toast.error(`File is over ${MAX_FILE_MB}MB. Please send a smaller file or share it on WhatsApp.`)
+    const picked = Array.from(e.target.files || [])
+    const tooBig = picked.find(f => f.size > MAX_FILE_MB * 1024 * 1024)
+    if (tooBig) {
+      toast.error(`${tooBig.name} is over ${MAX_FILE_MB}MB. Please send a smaller file or share it on WhatsApp.`)
       e.target.value = ''
       return
     }
-    setFile(f || null)
+    if (picked.length > MAX_FILES) toast.error(`Only the first ${MAX_FILES} files will be sent.`)
+    setFiles(picked.slice(0, MAX_FILES))
   }
+  const fileNames = files.map(f => f.name).join(', ')
 
   const buildSummary = (orderId, f, viaWhatsApp) => {
-    const sizeLine = SIZES.filter(s => sizes[s] > 0).map(s => `${s} x ${sizes[s]}`).join(', ')
+    const sizeLine = sizeList.filter(s => sizes[s] > 0).map(s => `${s} x ${sizes[s]}`).join(', ')
     return [
       `New print on demand order ${orderId}`,
       `Item: ${product}${f.get('product_other') ? ` (${f.get('product_other')})` : ''}`,
       `Colour: ${colour}${f.get('colour_other') ? ` (${f.get('colour_other')})` : ''}`,
-      `Sizes: ${sizeLine} (total ${totalQty})`,
+      `${isCap ? 'Quantity' : 'Sizes'}: ${sizeLine} (total ${totalQty})`,
       `Print: ${position}`,
-      `Design: ${file ? `${file.name}${viaWhatsApp ? ' (sending in chat)' : ' (attached)'}` : 'none uploaded'}${needsDesign ? ' - needs design help' : ''}`,
+      `Design: ${files.length ? `${fileNames}${viaWhatsApp ? ' (sending in chat)' : ' (attached)'}` : 'none uploaded'}${needsDesign ? ' - needs design help' : ''}`,
       f.get('design_notes') ? `Notes: ${f.get('design_notes')}` : null,
       `Delivery (Abuja): ${f.get('address')}`,
       f.get('deadline') ? `Needed by: ${f.get('deadline')}` : null,
@@ -79,8 +99,8 @@ const Order = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    if (totalQty < 1) { toast.error('Add at least one size.'); return }
-    if (!file && !needsDesign && !e.target.design_notes.value.trim()) {
+    if (totalQty < 1) { toast.error(isCap ? 'Enter how many caps.' : 'Add at least one size.'); return }
+    if (!files.length && !needsDesign && !e.target.design_notes.value.trim()) {
       toast.error('Upload your design, describe it, or tick "I need design help".')
       return
     }
@@ -97,7 +117,7 @@ const Order = () => {
     payload.append('product_other', form.get('product_other') || '')
     payload.append('colour', colour)
     payload.append('colour_other', form.get('colour_other') || '')
-    payload.append('sizes', JSON.stringify(Object.fromEntries(SIZES.filter(s => sizes[s] > 0).map(s => [s, sizes[s]]))))
+    payload.append('sizes', JSON.stringify(Object.fromEntries(sizeList.filter(s => sizes[s] > 0).map(s => [s, sizes[s]]))))
     payload.append('total_quantity', String(totalQty))
     payload.append('print_position', position)
     payload.append('needs_design_help', needsDesign ? 'yes' : 'no')
@@ -109,7 +129,8 @@ const Order = () => {
     payload.append('customer_phone', form.get('phone') || '')
     payload.append('customer_email', form.get('email') || '')
     payload.append('summary', summary)
-    if (file) payload.append('design_file', file, file.name)
+    payload.append('design_file_count', String(files.length))
+    files.forEach((f, i) => payload.append(`design_file_${i + 1}`, f, f.name))
 
     if (!N8N_WEBHOOK) {
       sendToWhatsApp(waSummary)
@@ -123,7 +144,7 @@ const Order = () => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       setDoneId(orderId)
       e.target.reset()
-      setSizes(emptySizes); setFile(null); setNeeds(false)
+      setSizes(emptySizes); setFiles([]); setNeeds(false)
     } catch {
       toast.error("We couldn't send your order online, so we've opened WhatsApp instead.")
       sendToWhatsApp(waSummary)
@@ -174,10 +195,10 @@ const Order = () => {
           <h2><span>1</span> Choose your item</h2>
           <div className='ag-order__chips'>
             {PRODUCTS.map(p => (
-              <button type='button' key={p} className={`ag-order__chip${product === p ? ' active' : ''}`} onClick={() => setProduct(p)}>{p}</button>
+              <button type='button' key={p} className={`ag-order__chip${product === p ? ' active' : ''}`} onClick={() => chooseProduct(p)}>{p}</button>
             ))}
           </div>
-          {product === 'Other' && <input name='product_other' className='ag-order__input' placeholder='What clothing item?' required />}
+          {product === 'Other' && <input name='product_other' className='ag-order__input' placeholder='What item?' required />}
 
           <label className='ag-order__field-label'>Colour</label>
           <div className='ag-order__chips'>
@@ -190,14 +211,15 @@ const Order = () => {
 
         {/* 2. Sizes */}
         <section className='ag-order__card'>
-          <h2><span>2</span> Sizes & quantity</h2>
+          <h2><span>2</span> {isCap ? 'Quantity' : 'Sizes & quantity'}</h2>
           <div className='ag-order__sizes'>
-            {SIZES.map(s => (
+            {sizeList.map(s => (
               <div key={s} className='ag-order__size'>
                 <div className='ag-order__size-name'>{s}</div>
                 <div className='ag-order__stepper'>
                   <button type='button' onClick={() => changeSize(s, -1)} aria-label={`Fewer ${s}`}>−</button>
-                  <span>{sizes[s]}</span>
+                  <input type='number' min='0' inputMode='numeric' value={sizes[s] || ''} placeholder='0'
+                    onChange={e => setSizeQty(s, e.target.value)} aria-label={`Quantity ${s}`} />
                   <button type='button' onClick={() => changeSize(s, 1)} aria-label={`More ${s}`}>+</button>
                 </div>
               </div>
@@ -211,15 +233,15 @@ const Order = () => {
           <h2><span>3</span> Your design</h2>
           <label className='ag-order__field-label'>Print position</label>
           <div className='ag-order__chips'>
-            {POSITIONS.map(p => (
+            {positions.map(p => (
               <button type='button' key={p} className={`ag-order__chip${position === p ? ' active' : ''}`} onClick={() => setPosition(p)}>{p}</button>
             ))}
           </div>
 
           <label className='ag-order__upload'>
-            <input type='file' accept='image/*,.pdf,.ai,.eps,.svg,.psd' onChange={onFile} />
+            <input type='file' multiple accept='image/*,.pdf,.ai,.eps,.svg,.psd' onChange={onFile} />
             <span className='ag-order__upload-icon'>⬆️</span>
-            <span>{file ? file.name : `Upload your design (PNG, JPG, PDF, AI, SVG — max ${MAX_FILE_MB}MB)`}</span>
+            <span>{files.length ? fileNames : `Upload your design — up to ${MAX_FILES} files (PNG, JPG, PDF, AI, SVG, max ${MAX_FILE_MB}MB each)`}</span>
           </label>
 
           <label className='ag-order__check'>

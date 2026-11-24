@@ -21,7 +21,7 @@ The order page (`/order`, `src/pages/Order/Order.jsx`) sends every order to an n
   - Path: e.g. `order`
   - Respond: `Immediately` (the site only needs a 200 response)
   - Options → **Allowed Origins (CORS)**: `https://auwalgraphics.com` (add `http://localhost:5173` for testing)
-  - The uploaded design arrives as binary data named `design_file`; the other fields arrive under `body`.
+  - Uploaded designs arrive as binary data named `design_file_1`, `design_file_2`, …; the other fields arrive under `body`.
 - Activate the workflow and copy the **Production URL**.
 
 ### 2. Tell the website the webhook URL
@@ -44,13 +44,13 @@ If the variable is not set, or the webhook fails, the form opens WhatsApp with t
 |---|---|---|
 | `order_id` | `AG-261123-7K2P` | Generated on the site; shown to the customer |
 | `submitted_at` | `2026-11-23T16:28:45.474Z` | ISO time (UTC) |
-| `product` | `Polo Shirt` | T-Shirt, Polo Shirt, Hoodie, Sweatshirt, Long-Sleeve T-Shirt, Other |
+| `product` | `Cap` | T-Shirt, Polo Shirt, Hoodie, Sweatshirt, Long-Sleeve T-Shirt, Cap, Other |
 | `product_other` | | Filled when product is `Other` |
 | `colour` | `Navy` | White, Black, Navy, Grey, Red, Other |
 | `colour_other` | | Filled when colour is `Other` |
-| `sizes` | `{"M":2,"L":1}` | JSON string, size → quantity |
+| `sizes` | `{"M":2,"L":1}` | JSON string, size → quantity. Caps use `{"One size":250}` |
 | `total_quantity` | `3` | |
-| `print_position` | `Front & Back` | Front, Back, Front & Back |
+| `print_position` | `Front & Back` | Clothing: Front, Back, Front & Back. Caps: Front, Front & Back, Front, Side & Back |
 | `needs_design_help` | `yes` / `no` | |
 | `design_notes` | `Logo on front…` | Free text |
 | `delivery_method` | `Delivery within Abuja` | Always this for now (Abuja only) |
@@ -60,8 +60,9 @@ If the variable is not set, or the webhook fails, the form opens WhatsApp with t
 | `customer_phone` | | WhatsApp number |
 | `customer_email` | | Optional |
 | `summary` | | Ready-made plain-text summary to forward on WhatsApp/email |
-| `design_file` | (file) | Optional upload, max 10 MB |
+| `design_file_count` | `2` | Number of uploaded design files (0–5) |
+| `design_file_1` … `design_file_5` | (files) | Optional uploads, max 10 MB each |
 
 ### Suggested workflow
 
-Webhook → save the order (Google Sheets / Airtable) → save `design_file` (Google Drive) → notify the business on WhatsApp/Telegram/email with `summary` → send the customer a confirmation with their `order_id`.
+Webhook → save the order (Google Sheets / Airtable) → save the design files (Google Drive) → notify the business on WhatsApp/Telegram/email with `summary` → send the customer a confirmation with their `order_id`.
