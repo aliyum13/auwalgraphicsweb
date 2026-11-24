@@ -20,6 +20,7 @@ import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail'
 import FounderPortfolio from './pages/FounderPortfolio/FounderPortfolio'
 import Order from './pages/Order/Order'
+import Track from './pages/Track/Track'
 
 const HomePage = ({ openPopup }) => (
   <>
@@ -118,6 +119,7 @@ const AppContent = () => {
       <Routes>
         <Route path='/'             element={<HomePage openPopup={openOrder} />} />
         <Route path='/order'        element={<Order />} />
+        <Route path='/track'        element={<Track />} />
         <Route path='/services/:id' element={<ServiceDetail />} />
         <Route path='/portfolio/:id'element={<ProjectDetail />} />
         <Route path='/founder'      element={<FounderPortfolio />} />

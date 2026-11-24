@@ -102,6 +102,10 @@ export const faqData = [
     a: 'Yes. Tick "I need design help" on the order form, describe your idea, and we will prepare the artwork and send you a mockup to approve.',
   },
   {
+    q: 'How do I track my order?',
+    a: 'Go to the Track Order page and enter your order code (for example AG-261124-ABCD) and the phone number you ordered with. You will see where your order is: received, confirmed, printing, ready, out for delivery or delivered.',
+  },
+  {
     q: 'How long does an order take?',
     a: 'Most orders are printed and delivered within 2 – 7 days depending on quantity. Add your deadline on the order form if it is urgent.',
   },

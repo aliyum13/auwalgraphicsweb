@@ -72,6 +72,7 @@ const Navbar = ({ theme, setTheme, openPopup }) => {
               {l.label}
             </button>
           ))}
+          <button onClick={() => navigate('/track')}>Track Order</button>
         </div>
 
         {/* Right: theme + CTA + hamburger */}
@@ -118,6 +119,7 @@ const Navbar = ({ theme, setTheme, openPopup }) => {
               {l.label}
             </button>
           ))}
+          <Link to='/track' onClick={() => setDrawerOpen(false)}>Track Order</Link>
           <Link to='/founder' onClick={() => setDrawerOpen(false)}>Meet the Founder</Link>
         </div>
         <button

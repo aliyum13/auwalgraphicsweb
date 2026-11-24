@@ -79,6 +79,7 @@ const Footer = ({ openPopup }) => (
         <h2>Order</h2>
         <ul>
           <li><Link to='/order'>Start an Order</Link></li>
+          <li><Link to='/track'>Track Your Order</Link></li>
           <li><Link to='/services/clothing-printing'>How Print on Demand Works</Link></li>
           <li><a href='/#services'>What You Can Order</a></li>
           <li><a href='/#faq'>FAQ</a></li>

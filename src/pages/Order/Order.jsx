@@ -160,9 +160,10 @@ const Order = () => {
         <motion.div className='ag-order__done' initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}>
           <div className='ag-order__done-icon'>✅</div>
           <h1>Order received</h1>
-          <p>Your order number is</p>
+          <p>Your order code is</p>
           <div className='ag-order__done-id'>{doneId}</div>
           <p>
+            Save this code — you can use it with your phone number to track your order on our Track Order page.
             We'll confirm your order and price on WhatsApp. Nothing is printed until you confirm and pay.
             {!N8N_WEBHOOK && ' If WhatsApp opened, press send so we receive your order, and attach your design there.'}
           </p>
@@ -170,6 +171,7 @@ const Order = () => {
             <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I just placed order ${doneId}`)}`} target='_blank' rel='noreferrer' className='ag-order__btn-primary'>
               📱 Message Us About This Order
             </a>
+            <Link to={`/track?code=${doneId}`} className='ag-order__btn-ghost' style={{ textDecoration:'none', textAlign:'center' }}>📦 Track This Order</Link>
             <button className='ag-order__btn-ghost' onClick={() => setDoneId(null)}>Place Another Order</button>
           </div>
         </motion.div>
