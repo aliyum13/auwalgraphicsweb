@@ -144,3 +144,15 @@
   .ag-order__sizes { grid-template-columns: repeat(2, 1fr); }
   .ag-order__row { grid-template-columns: 1fr; }
 }
+
+/* Typed quantity per size */
+.ag-order__help { font-size: 13px; color: #777; margin-top: -6px; }
+.dark .ag-order__help { color: #999; }
+.ag-order__qty {
+  width: 90px; padding: 8px 10px; text-align: center; font-weight: 700; font-size: 15px; color: #111;
+  border: 1.5px solid #dde0ee; border-radius: 10px; background: #fff; font-family: inherit; -moz-appearance: textfield;
+}
+.ag-order__qty::-webkit-outer-spin-button,
+.ag-order__qty::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.ag-order__qty:focus { outline: none; border-color: #2c459d; }
+.dark .ag-order__qty { background: #0f1018; border-color: #2a2c3d; color: #fff; }

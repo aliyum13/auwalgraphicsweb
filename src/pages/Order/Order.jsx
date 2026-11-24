@@ -16,8 +16,7 @@ const PRODUCTS  = ['T-Shirt', 'Polo Shirt', 'Hoodie', 'Sweatshirt', 'Long-Sleeve
 const COLOURS   = ['White', 'Black', 'Navy', 'Grey', 'Red', 'Other']
 const SIZES     = ['S', 'M', 'L', 'XL', 'XXL', '3XL']
 const CAP_SIZES = ['One size']
-const POSITIONS     = ['Front', 'Back', 'Front & Back']
-const CAP_POSITIONS = ['Front', 'Front & Back', 'Front, Side & Back']
+const PRINT_SPOTS = ['Front', 'Side', 'Back']
 const MAX_FILE_MB = 10
 const MAX_FILES   = 5
 
@@ -34,7 +33,7 @@ const Order = () => {
   const [product, setProduct]   = useState(PRODUCTS[0])
   const [colour, setColour]     = useState(COLOURS[0])
   const [sizes, setSizes]       = useState(emptySizes)
-  const [position, setPosition] = useState(POSITIONS[0])
+  const [spots, setSpots]       = useState(['Front'])
   const [files, setFiles]       = useState([])
   const [needsDesign, setNeeds] = useState(false)
   const [sending, setSending]   = useState(false)
@@ -45,22 +44,22 @@ const Order = () => {
 
   const isCap     = product === 'Cap'
   const sizeList  = isCap ? CAP_SIZES : SIZES
-  const positions = isCap ? CAP_POSITIONS : POSITIONS
+  // e.g. "Front", "Front & Back", "Front, Side & Back"
+  const position  = (() => {
+    const list = PRINT_SPOTS.filter(x => spots.includes(x))
+    return list.length < 2 ? (list[0] || '') : `${list.slice(0, -1).join(', ')} & ${list[list.length - 1]}`
+  })()
+  const toggleSpot = (x) =>
+    setSpots(prev => prev.includes(x) ? prev.filter(y => y !== x) : [...prev, x])
 
   const totalQty = useMemo(() => sizeList.reduce((a, s) => a + (sizes[s] || 0), 0), [sizes, sizeList])
 
-  const changeSize = (s, delta) =>
-    setSizes(prev => ({ ...prev, [s]: Math.max(0, (prev[s] || 0) + delta) }))
   const setSizeQty = (s, value) => {
     const n = parseInt(value, 10)
     setSizes(prev => ({ ...prev, [s]: Number.isFinite(n) && n > 0 ? Math.min(n, 100000) : 0 }))
   }
 
-  const chooseProduct = (p) => {
-    setProduct(p)
-    const nextPositions = p === 'Cap' ? CAP_POSITIONS : POSITIONS
-    if (!nextPositions.includes(position)) setPosition(nextPositions[0])
-  }
+  const chooseProduct = (p) => setProduct(p)
 
   const onFile = (e) => {
     const picked = Array.from(e.target.files || [])
@@ -99,6 +98,7 @@ const Order = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+    if (!spots.length) { toast.error('Choose where to print: front, side or back.'); return }
     if (totalQty < 1) { toast.error(isCap ? 'Enter how many caps.' : 'Add at least one size.'); return }
     if (!files.length && !needsDesign && !e.target.design_notes.value.trim()) {
       toast.error('Upload your design, describe it, or tick "I need design help".')
@@ -212,16 +212,14 @@ const Order = () => {
         {/* 2. Sizes */}
         <section className='ag-order__card'>
           <h2><span>2</span> {isCap ? 'Quantity' : 'Sizes & quantity'}</h2>
+          <p className='ag-order__help'>Type how many you need{isCap ? '' : ' in each size'}.</p>
           <div className='ag-order__sizes'>
             {sizeList.map(s => (
               <div key={s} className='ag-order__size'>
                 <div className='ag-order__size-name'>{s}</div>
-                <div className='ag-order__stepper'>
-                  <button type='button' onClick={() => changeSize(s, -1)} aria-label={`Fewer ${s}`}>−</button>
-                  <input type='number' min='0' inputMode='numeric' value={sizes[s] || ''} placeholder='0'
-                    onChange={e => setSizeQty(s, e.target.value)} aria-label={`Quantity ${s}`} />
-                  <button type='button' onClick={() => changeSize(s, 1)} aria-label={`More ${s}`}>+</button>
-                </div>
+                <input className='ag-order__qty' type='number' min='0' inputMode='numeric'
+                  value={sizes[s] || ''} placeholder='0'
+                  onChange={e => setSizeQty(s, e.target.value)} aria-label={`Quantity ${s}`} />
               </div>
             ))}
           </div>
@@ -231,10 +229,12 @@ const Order = () => {
         {/* 3. Design */}
         <section className='ag-order__card'>
           <h2><span>3</span> Your design</h2>
-          <label className='ag-order__field-label'>Print position</label>
+          <label className='ag-order__field-label'>Where to print (choose one or more)</label>
           <div className='ag-order__chips'>
-            {positions.map(p => (
-              <button type='button' key={p} className={`ag-order__chip${position === p ? ' active' : ''}`} onClick={() => setPosition(p)}>{p}</button>
+            {PRINT_SPOTS.map(x => (
+              <button type='button' key={x} aria-pressed={spots.includes(x)} className={`ag-order__chip${spots.includes(x) ? ' active' : ''}`} onClick={() => toggleSpot(x)}>
+                {spots.includes(x) ? '✓ ' : ''}{x}
+              </button>
             ))}
           </div>
 

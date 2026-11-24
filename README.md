@@ -50,7 +50,7 @@ If the variable is not set, or the webhook fails, the form opens WhatsApp with t
 | `colour_other` | | Filled when colour is `Other` |
 | `sizes` | `{"M":2,"L":1}` | JSON string, size → quantity. Caps use `{"One size":250}` |
 | `total_quantity` | `3` | |
-| `print_position` | `Front & Back` | Clothing: Front, Back, Front & Back. Caps: Front, Front & Back, Front, Side & Back |
+| `print_position` | `Front, Side & Back` | Any combination of Front, Side, Back |
 | `needs_design_help` | `yes` / `no` | |
 | `design_notes` | `Logo on front…` | Free text |
 | `delivery_method` | `Delivery within Abuja` | Always this for now (Abuja only) |
