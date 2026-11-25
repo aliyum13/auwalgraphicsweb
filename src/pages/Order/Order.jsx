@@ -274,7 +274,7 @@ const Order = () => {
           </div>
           <div className='ag-order__row'>
             <div>
-              <label className='ag-order__field-label'>Email (optional)</label>
+              <label className='ag-order__field-label'>Email (optional — for order updates)</label>
               <input name='email' type='email' className='ag-order__input' placeholder='you@email.com' />
             </div>
             <div>

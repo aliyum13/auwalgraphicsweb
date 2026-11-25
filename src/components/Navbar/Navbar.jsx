@@ -43,7 +43,6 @@ const Navbar = ({ theme, setTheme, openPopup }) => {
   const links = [
     { label: 'Home',      id: null },
     { label: 'Services',  id: 'services' },
-    { label: 'Portfolio', id: 'portfolio' },
     { label: 'About',     id: 'why-us' },
     { label: 'Contact',   id: 'contact-us' },
   ]

@@ -38,8 +38,8 @@ const Hero = ({ openPopup }) => (
           <button className='ag-hero__btn-primary' onClick={openPopup}>
             👕 Start Your Order
           </button>
-          <a className='ag-hero__btn-outline' href='/#portfolio'>
-            See Our Work →
+          <a className='ag-hero__btn-outline' href='/#services'>
+            See What You Can Order →
           </a>
         </div>
 

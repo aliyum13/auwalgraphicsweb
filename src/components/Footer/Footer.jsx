@@ -92,7 +92,6 @@ const Footer = ({ openPopup }) => (
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li><a href='/#services'>Services</a></li>
-          <li><a href='/#portfolio'>Portfolio</a></li>
           <li><a href='/#why-us'>About</a></li>
           <li><a href='/#faq'>FAQ</a></li>
           <li>

@@ -46,28 +46,8 @@ export const servicesData = [
   },
 ]
 
-export const portfolioData = [
-  {
-    id: 'branded-merchandise',
-    title: 'Brand Merchandise Campaign',
-    client: 'atizens, mataset',
-    industry: 'Events',
-    category: 'Printing',
-    icon: '👕',
-    gradient: 'from-[#065f46] to-[#047857]',
-    thumbnail: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&q=80',
-    heroImage: '/bms-hero.png',
-    problem: 'A tech community needed branded merchandise for their annual hackathon — 300 attendees needed quality items within a 1-week timeline.',
-    solution: 'We designed and produced 300 custom polo shirts, 300 branded tote bags, 500 stickers, and 50 staff hoodies — all delivered 2 days before the event.',
-    result: 'The merchandise generated 50,000+ social media impressions as attendees posted photos online.',
-    gallery: [
-      '/bms-1.png',
-      '/bms-2.png',
-      '/bms-3.png',
-    ],
-    tags: ['T-Shirts', 'Branded Merch', 'Event Print', 'Bulk'],
-  },
-]
+// Case studies removed 2026-11-25 (figures not confirmed). Add real ones here.
+export const portfolioData = []
 
 export const testimonialsData = [
   {
@@ -152,7 +132,7 @@ export const founderData = {
     'Creative Consulting',
   ],
   socials: {
-    whatsapp: 'https://wa.me/2349067816736',
+    whatsapp: 'https://wa.me/2349056314212',
     email: 'auwalgraphicsinfo@gmail.com',
     instagram: 'https://instagram.com/auwal.graphics',
     linkedin: 'https://linkedin.com/in/',

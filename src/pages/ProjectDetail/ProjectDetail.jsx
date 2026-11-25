@@ -11,7 +11,7 @@ const ProjectDetail = () => {
   useEffect(() => { window.scrollTo(0, 0) }, [id])
 
   // Removed projects (web, branding, packaging) send visitors back to the work section
-  if (!project) return <Navigate to='/#portfolio' replace />
+  if (!project) return <Navigate to='/' replace />
 
   const others = portfolioData.filter(p => p.id !== id).slice(0, 3)
 

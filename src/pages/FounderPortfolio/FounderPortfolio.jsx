@@ -42,7 +42,7 @@ const FounderPortfolio = () => {
             <p className='ag-founder__bio'>{founderData.bio}</p>
             <div className='ag-founder__hero-btns'>
               <a href={founderData.socials.whatsapp} target='_blank' rel='noreferrer' className='ag-founder__btn-primary'>💼 Hire Me</a>
-              <a href='#founder-work' className='ag-founder__btn-ghost'>View My Work →</a>
+              {portfolioData.length > 0 && <a href='#founder-work' className='ag-founder__btn-ghost'>View My Work →</a>}
               <a href='#' className='ag-founder__btn-cv'>📄 Download CV</a>
             </div>
           </motion.div>
@@ -124,8 +124,8 @@ const FounderPortfolio = () => {
         </div>
       </div>
 
-      {/* ── PORTFOLIO ── */}
-      <div className='ag-founder__portfolio' id='founder-work'>
+      {/* ── PORTFOLIO ── (hidden while there are no confirmed case studies) */}
+      {portfolioData.length > 0 && <div className='ag-founder__portfolio' id='founder-work'>
         <div className='ag-founder__portfolio-intro'>
           <motion.div initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }}>
             <span className='ag-founder__section-label'>Portfolio</span>
@@ -162,7 +162,7 @@ const FounderPortfolio = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </div>}
 
       {/* ── TIMELINE ── */}
       <div className='ag-founder__timeline'>

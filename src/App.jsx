@@ -9,7 +9,6 @@ import Hero from './components/Hero/Hero'
 import TrustBar from './components/TrustBar/Trustbar'
 import Services from './components/Services/Services'
 import WhyUs from './components/WhyUs/WhyUs'
-import Portfolio from './components/Portfolio/Portfolio'
 import HowItWorks from './components/HowItWorks/HowItWorks'
 import CTABanner from './components/CTABanner/CTABanner'
 import FAQ from './components/FAQ/FAQ'
@@ -27,7 +26,6 @@ const HomePage = ({ openPopup }) => (
     <TrustBar />
     <Services />
     <WhyUs />
-    <Portfolio />
     <HowItWorks />
     <CTABanner openPopup={openPopup} />
     <FAQ />
