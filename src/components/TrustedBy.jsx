@@ -13,7 +13,13 @@ const trustItems = [
 
 const TrustBar = () => {
   // Duplicate items for seamless loop
-  const items = [...trustItems, ...trustItems]
+  const items = [.  { icon: '👕',   label: 'No Minimum Order' },
+  { icon: '🖨️',  label: 'Printed On Demand' },
+  { icon: '🏙️',  label: 'Abuja Based' },
+  { icon: '⚡',   label: 'Fast Turnaround' },
+  { icon: '🚚',   label: 'Delivery Across Abuja' },
+  { icon: '📦',   label: 'Track Your Order Online' },
+]
 
   return (
     <div className='bg-primary py-4 overflow-hidden'>

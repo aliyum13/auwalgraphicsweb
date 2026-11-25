@@ -2,13 +2,12 @@ import React from 'react'
 import './TrustBar.css'
 
 const items = [
-  { num: '200+', label: 'Projects Delivered' },
-  { num: '100+', label: 'Happy Clients' },
+  { icon: '👕',   label: 'No Minimum Order' },
+  { icon: '🖨️',  label: 'Printed On Demand' },
   { icon: '🏙️',  label: 'Abuja Based' },
   { icon: '⚡',   label: 'Fast Turnaround' },
   { icon: '🚚',   label: 'Delivery Across Abuja' },
-  { num: '5★',   label: 'Client Rating' },
-  { icon: '🇳🇬',  label: "Nigeria's Best" },
+  { icon: '📦',   label: 'Track Your Order Online' },
 ]
 
 const TrustBar = () => {

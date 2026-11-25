@@ -11,7 +11,6 @@ import Services from './components/Services/Services'
 import WhyUs from './components/WhyUs/WhyUs'
 import Portfolio from './components/Portfolio/Portfolio'
 import HowItWorks from './components/HowItWorks/HowItWorks'
-import Testimonials from './components/Testimonials/Testimonials'
 import CTABanner from './components/CTABanner/CTABanner'
 import FAQ from './components/FAQ/FAQ'
 import ContactUs from './components/ContactUs/ContactUs'
@@ -30,7 +29,6 @@ const HomePage = ({ openPopup }) => (
     <WhyUs />
     <Portfolio />
     <HowItWorks />
-    <Testimonials />
     <CTABanner openPopup={openPopup} />
     <FAQ />
     <ContactUs />

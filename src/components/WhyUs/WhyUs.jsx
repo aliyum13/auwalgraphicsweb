@@ -42,7 +42,7 @@ const WhyUs = () => (
 
         {/* Stats */}
         <div className='ag-whyus__stats'>
-          {[['200+','Projects Done'],['100+','Happy Clients'],['5★','Avg Rating'],['Fast','Turnaround']].map(([n,l]) => (
+          {[['No','Minimum Order'],['On','Demand Printing'],['Abuja','Delivery'],['Fast','Turnaround']].map(([n,l]) => (
             <div key={l} className='ag-whyus__stat'>
               <span className='ag-whyus__stat-num'>{n}</span>
               <span className='ag-whyus__stat-lbl'>{l}</span>
